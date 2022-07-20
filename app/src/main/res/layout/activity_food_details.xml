@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Customer.Details.ActivityDetials">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:fontFamily="@font/poppins"
+            android:text="Your Meal"
+            android:textColor="@color/colorprimary1"
+            android:textSize="@dimen/_24ssp"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/img_details"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:src="@drawable/img_details" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Mulberry Meat Burger"
+                    android:textColor="@color/colorprimary1"
+                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/description_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:fontFamily="@font/poppins"
+                    android:text="A description about this meal A description about this meal A description"
+                    android:textColor="#B6B7B7"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_23sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:fontFamily="@font/poppins"
+            android:text="Have"
+            android:textColor="@color/colorprimary1"
+            android:textSize="@dimen/_18ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/lettuce_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:buttonTint="@color/maincolor"
+                android:fontFamily="@font/poppins"
+                android:text="Lettuce"
+                android:textColor="@color/colorprimary1"
+                android:textSize="@dimen/_12ssp" />
+
+            <CheckBox
+                android:id="@+id/pepper_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:buttonTint="@color/maincolor"
+                android:fontFamily="@font/poppins"
+                android:text="Pepper"
+                android:textColor="@color/colorprimary1"
+                android:textSize="@dimen/_12ssp" />
+
+            <CheckBox
+                android:id="@+id/olive_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:buttonTint="@color/maincolor"
+                android:fontFamily="@font/poppins"
+                android:text="Olive"
+                android:textColor="@color/colorprimary1"
+                android:textSize="@dimen/_12ssp" />
+        </LinearLayout>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_23sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:fontFamily="@font/poppins"
+            android:text="Orders"
+            android:textColor="@color/colorprimary1"
+            android:textSize="@dimen/_18ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginStart="@dimen/_16sdp"
+
+            android:gravity="start"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button7_minus"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/button_add_item"
+                android:gravity="center|center_horizontal"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18sdp" />
+
+            <TextView
+                android:id="@+id/textView20_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:text="1"
+                android:textSize="@dimen/_20sdp" />
+
+            <Button
+                android:id="@+id/button6_add"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/button_add_item"
+                android:gravity="center|center_vertical"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18sdp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_23sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/poppins"
+            android:text="Additions"
+            android:textColor="@color/colorprimary1"
+            android:textSize="@dimen/_18ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/re"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp">
+
+                <Button
+                    android:id="@+id/login_button"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:background="@drawable/button_next"
+                    android:gravity="center"
+android:fontFamily="@font/metrophobic"
+
+                    android:text="Add to cart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp" />
+
+                <TextView
+                    android:id="@+id/total_detalis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="total"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/maincolor"
+                    android:textSize="@dimen/_18ssp" />
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_horizontal"
+                    android:text="EGP"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/maincolor"
+                    android:textSize="@dimen/_18ssp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

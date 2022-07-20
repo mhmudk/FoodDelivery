@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/favouritevisibble"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/guideline10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Favorites"
+            android:textColor="@color/colorprimary1"
+            android:textSize="@dimen/_25ssp" />
+
+        <ImageView
+            android:id="@+id/imggvisible"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_marginTop="@dimen/_85sdp"
+            android:background="@drawable/bg_notification"
+            android:padding="@dimen/_50sdp"
+            android:src="@drawable/heart_empty" />
+
+        <TextView
+            android:id="@+id/text_emptyfave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Empty Favorite List"
+            android:textColor="@color/colorprimary1"
+            android:textSize="@dimen/_25ssp" />
+
+        <TextView
+            android:id="@+id/finditem_fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Fill out the shopping cart for your detailed food"
+            android:textAlignment="center"
+            android:textColor="@color/secprimary1"
+            android:textSize="@dimen/_14ssp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/te"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Favourite"
+        android:textColor="@color/colorprimary1"
+        android:textSize="@dimen/_24ssp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_fav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_5sdp"/>
+
+
+</LinearLayout>

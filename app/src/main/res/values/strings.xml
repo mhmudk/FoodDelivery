@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Food Delivery</string>
+    <string name="btn_add_contact"><u>Forget password ?</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="web_id">704140680449-2c2e1im7d4bj6olbr94tr8jqo3a03ruj.apps.googleusercontent.com</string>
+
+    <string name="facebook_app_id">708866093642846</string>
+    <string name="fb_login_protocol_scheme">fb708866093642846</string>
+    <string name="facebook_client_token">044761bd14bf0a9e66e1c273a09687a0</string>
+
+
+</resources>

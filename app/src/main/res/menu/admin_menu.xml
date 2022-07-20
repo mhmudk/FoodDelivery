@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/burger"
+        android:icon="@drawable/burgermain"
+        android:enabled="true"
+
+        android:title="Burger" />
+    <item
+        android:id="@+id/drink"
+        android:icon="@drawable/drinkmain"
+        android:enabled="true"
+
+        android:title="Drink" />
+
+    <item
+        android:id="@+id/Pizza"
+        android:icon="@drawable/pizzamain"
+        android:enabled="true"
+
+        android:title="Pizza" />
+    <item
+        android:id="@+id/freiss_admin"
+        android:icon="@drawable/fries_new"
+        android:enabled="true"
+
+        android:title="Fries" />
+</menu>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Customer.Buttom_Navi.FragmentHome.Norfication.CustomerNotification">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="Notification"
+        android:textColor="@color/colorprimary1"
+        android:textSize="@dimen/_25ssp" />
+<LinearLayout
+    android:id="@+id/notification_secondView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:visibility="gone"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/img_notifi"
+        android:layout_width="@dimen/_170sdp"
+        android:layout_height="@dimen/_170sdp"
+        android:layout_marginTop="@dimen/_85sdp"
+        android:background="@drawable/bg_notification"
+        android:padding="@dimen/_50sdp"
+        android:src="@drawable/bell" />
+
+    <TextView
+        android:id="@+id/text_nonotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="No Notification"
+        android:textColor="@color/colorprimary1"
+        android:textSize="@dimen/_25ssp" />
+
+
+</LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+
+        android:id="@+id/rec_notifity"/>
+
+</LinearLayout>

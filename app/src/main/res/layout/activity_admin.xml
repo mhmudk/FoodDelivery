@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.Registration.AdminRegistration">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".98" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center|top"
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toTopOf="@+id/guideline17"
+        app:layout_constraintEnd_toStartOf="@+id/guideline19"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintTop_toTopOf="@+id/guideline12">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+
+                app:cardElevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp">
+                <ImageView
+                    android:id="@+id/back_signup_admin"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:src="@drawable/back"
+                    android:scaleType="fitCenter"
+                    android:rotation="180"
+                    android:padding="@dimen/_5sdp"
+                    />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_gravity="center|top"
+                android:text="Sign Up "
+                android:layout_marginLeft="@dimen/_80sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/colorprimary1"
+                android:textSize="@dimen/_20ssp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center_horizontal"
+            android:text="Add your details to sign up"
+            android:textAlignment="center"
+            android:textColor="@color/secprimary1"
+            android:textSize="@dimen/_14ssp" />
+
+        <EditText
+            android:id="@+id/name_admin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/btn_lognin"
+            android:drawableLeft="@drawable/user"
+            android:drawablePadding="@dimen/_5sdp"
+            android:hint="Name"
+            android:padding="@dimen/_3sdp" />
+
+        <EditText
+            android:id="@+id/email_admin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/btn_lognin"
+            android:drawableLeft="@drawable/e_mail"
+            android:drawablePadding="@dimen/_5sdp"
+            android:hint="Email"
+            android:padding="@dimen/_3sdp" />
+
+        <EditText
+            android:id="@+id/phoneee_admin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/btn_lognin"
+            android:drawableLeft="@drawable/phonemd"
+            android:drawablePadding="@dimen/_5sdp"
+            android:hint="Phone"
+            android:inputType="number"
+            android:padding="@dimen/_3sdp" />
+
+            <EditText
+                android:id="@+id/location_admin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+           android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/btn_lognin"
+                android:drawableLeft="@drawable/locat"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="Location"
+                android:padding="@dimen/_3sdp" />
+
+
+        <EditText
+            android:id="@+id/passw_admin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/btn_lognin"
+            android:drawableLeft="@drawable/lockk"
+            android:drawablePadding="@dimen/_5sdp"
+            android:hint="Password"
+            android:inputType="numberPassword"
+            android:padding="@dimen/_3sdp" />
+
+        <EditText
+            android:id="@+id/confirm_admin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/btn_lognin"
+            android:drawableLeft="@drawable/lockk"
+            android:drawablePadding="@dimen/_5sdp"
+            android:hint="Confirm Password"
+            android:padding="@dimen/_3sdp" />
+
+        <Button
+            android:id="@+id/regist_admin"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/button_next"
+            android:gravity="center"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Already have an Account?"
+                android:textColor="@color/secprimary1"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textColor="@color/maincolor"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".98" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

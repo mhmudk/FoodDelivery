@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Delivery.DeliveryPannel">
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="Delivery Orders"
+        android:layout_gravity="center_horizontal"
+
+        android:textColor="@color/colorprimary1"
+        android:textSize="@dimen/_25ssp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/second_linear"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imgvisible"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_marginTop="@dimen/_85sdp"
+            android:background="@drawable/bg_notification"
+            android:padding="@dimen/_50sdp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/orders_empty" />
+
+        <TextView
+            android:id="@+id/textemptyvisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Empty Orders List"
+            android:layout_gravity="center_horizontal"
+
+            android:textColor="@color/colorprimary1"
+            android:textSize="@dimen/_25ssp" />
+
+        <TextView
+            android:id="@+id/itemvisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+
+            android:text="Fill out the shopping cart for your detailed food"
+            android:textAlignment="center"
+            android:textColor="@color/secprimary1"
+            android:textSize="@dimen/_14ssp" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/delivery_rec"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_margin="@dimen/_5sdp"/>
+</LinearLayout>
