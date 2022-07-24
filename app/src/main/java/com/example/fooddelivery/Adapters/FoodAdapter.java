@@ -26,7 +26,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHoder> {
     ArrayList<Food> listModel;
     Context mContext;
     CartData cartData;
-    CartDatafavourite cartDatafa ;
+    CartDatafavourite cartDatafa;
+
     public FoodAdapter(ArrayList<Food> listModel, Context mContext) {
         this.listModel = listModel;
         this.mContext = mContext;
@@ -84,8 +85,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHoder> {
 
     public class ViewHoder extends RecyclerView.ViewHolder {
         View myview;
-        ImageView img,favourite;
-        TextView name, price,description;
+        ImageView img, favourite;
+        TextView name, price, description;
         Button add;
 
 
@@ -102,8 +103,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHoder> {
             itemView.setOnClickListener(view -> {
 
                 Intent intent = new Intent(mContext, ActivityDetials.class);
-               intent.putExtra("id", listModel.get(getAdapterPosition()).getId());
-            intent.putExtra("isDrink", listModel.get(getAdapterPosition()).getCategory().equals("Drink"));
+                intent.putExtra("id", listModel.get(getAdapterPosition()).getId());
+                intent.putExtra("isDrink", listModel.get(getAdapterPosition()).getCategory().equals("Drink"));
 
 
                 mContext.startActivity(intent);
@@ -130,7 +131,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHoder> {
         }
 
         public void updateButtonFavourite(Food food) {
-            if (cartDatafa.isInCart(food.getId(),mContext)) {
+            if (cartDatafa.isInCart(food.getId(), mContext)) {
                 favourite.setImageResource(R.drawable.ic_heart);
             } else {
 

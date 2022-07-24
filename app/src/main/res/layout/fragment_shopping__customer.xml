@@ -72,20 +72,22 @@
             >
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
                 android:layout_margin="@dimen/_5sdp"
 
-                app:cardCornerRadius="@dimen/_5sdp"
-                app:cardElevation="@dimen/_5sdp">
-
+                app:cardElevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp">
                 <ImageView
                     android:id="@+id/back_viewCustomer"
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:padding="@dimen/_5sdp"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:src="@drawable/back"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/back" />
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:rotation="180"
+                    />
             </androidx.cardview.widget.CardView>
 
             <TextView
@@ -119,7 +121,7 @@
         </LinearLayout>
 
         <LinearLayout
-
+android:layout_margin="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
@@ -169,6 +171,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_margin="@dimen/_10sdp"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -212,6 +215,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_margin="@dimen/_5sdp"
 
             android:layout_marginTop="@dimen/_10sdp"
             android:background="#B6B7B7" />
@@ -220,6 +224,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
+            android:layout_margin="@dimen/_5sdp"
+
             android:orientation="horizontal">
 
             <TextView

@@ -273,9 +273,12 @@ android:scaleType="fitCenter"
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_125sdp"
-        android:layout_margin="@dimen/_5sdp"
+        android:layout_height="@dimen/_135sdp"
+
         android:elevation="@dimen/_2sdp"
+
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
         app:cardCornerRadius="@dimen/_7sdp">
 
         <LinearLayout
@@ -291,8 +294,6 @@ android:scaleType="fitCenter"
                 app:iss_corner_radius="10"
                 app:iss_delay="1000"
                 app:iss_period="1000"
-
-
                 />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
