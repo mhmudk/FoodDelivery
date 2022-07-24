@@ -228,7 +228,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_height="@dimen/_60sdp"
         android:backgroundTint="#F7F0EC"
         android:fontFamily="@font/metrophobic"
         android:text="Sign Out"

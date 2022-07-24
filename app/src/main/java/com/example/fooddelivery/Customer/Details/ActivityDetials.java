@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.fooddelivery.Adapters.DetailsAdapater;
 import com.example.fooddelivery.CartData;
+import com.example.fooddelivery.Customer.ViewCustomer;
 import com.example.fooddelivery.R;
 import com.example.fooddelivery.pojo.Food;
 import com.google.firebase.database.DataSnapshot;
@@ -35,7 +36,7 @@ public class ActivityDetials extends AppCompatActivity {
     DetailsAdapater adapter;
     CheckBox lettuce, pepper, olive;
     int lettuce_price = 5, pepper_price = 7, olive_price = 6;
-    ImageView image;
+    ImageView image,backtoViewCustomer;
     Button plus, minus, checkout;
     TextView txt_name, description, count, total_price;
     String getprice, getId;
@@ -89,6 +90,12 @@ public class ActivityDetials extends AppCompatActivity {
                 }
             }
         });
+        backtoViewCustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ViewCustomer.class));
+            }
+        });
 
     }
 
@@ -130,6 +137,7 @@ public class ActivityDetials extends AppCompatActivity {
     }
     public void bind() {
         image = findViewById(R.id.img_details);
+        backtoViewCustomer = findViewById(R.id.back_viewCustomerfromdetails);
         plus = findViewById(R.id.button6_add);
         minus = findViewById(R.id.button7_minus);
         count = findViewById(R.id.textView20_count);

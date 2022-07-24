@@ -61,9 +61,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/metrophobic"
         android:text="Favourite"
-        android:textColor="@color/colorprimary1"
+        android:textStyle="bold"
+        android:textColor="@color/secprimary1"
         android:textSize="@dimen/_24ssp" />
 
     <androidx.recyclerview.widget.RecyclerView

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class EditProfile extends AppCompatActivity {
     TextView txt_name ;
     EditText name_edit, email_edit, mobilenumber_edit, location_edit;
     Button save  ;
+    ImageView backToviewcustomer ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,12 @@ public class EditProfile extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), ViewCustomer.class));
         }
     });
-
+        backToviewcustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ViewCustomer.class));
+            }
+        });
         GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if (signInAccount != null) {
             name_edit.setText(signInAccount.getDisplayName());
@@ -75,6 +82,7 @@ mobilenumber_edit.setVisibility(View.GONE);
     public void findView(){
         name_edit = findViewById(R.id.edit_name_profile);
         email_edit =findViewById(R.id.edit_email_profile);
+        backToviewcustomer =findViewById(R.id.back_viewCustomerfromProfile);
         mobilenumber_edit = findViewById(R.id.edit_mobilenumber_profile);
         location_edit = findViewById(R.id.edit_location_profile);
         txt_name = findViewById(R.id.name_formdata);
