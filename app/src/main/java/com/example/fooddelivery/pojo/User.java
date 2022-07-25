@@ -1,7 +1,7 @@
 package com.example.fooddelivery.pojo;
 
 public class User {
-    String name, phone, email, password, usertype, location,id;
+    String name, phone, email, password, usertype, location, id;
 
     public User() {
     }
@@ -14,21 +14,21 @@ public class User {
         this.id = id;
     }
 
-    public User(String name, String email ,String phone, String password, String usertype) {
+    public User(String name, String email, String phone, String password, String usertype) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.password = password;
         this.usertype = usertype;
     }
-public User(String name,String email,String usertype){
-    this.name = name;
-    this.email = email;
 
-    this.usertype = usertype;
+    public User(String name, String email, String usertype) {
+        this.name = name;
+        this.email = email;
 
-}
+        this.usertype = usertype;
 
+    }
 
 
     public User(String name, String email, String phone, String password, String usertype, String location) {

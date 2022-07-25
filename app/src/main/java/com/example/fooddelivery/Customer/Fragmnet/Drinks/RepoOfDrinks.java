@@ -18,7 +18,6 @@ import io.reactivex.rxjava3.core.SingleOnSubscribe;
 public class RepoOfDrinks {
 
 
-
     public Single<List<Food>> getDrinks() {
         DatabaseReference fooodDatabase = FirebaseDatabase.getInstance().getReference("Food");
         ArrayList<Food> listOfFood = new ArrayList<>();
@@ -40,7 +39,7 @@ public class RepoOfDrinks {
 
                     @Override
                     public void onCancelled(@androidx.annotation.NonNull DatabaseError error) {
-                    emitter.onError(error.toException());
+                        emitter.onError(error.toException());
                     }
                 });
 

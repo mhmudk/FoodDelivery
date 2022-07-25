@@ -14,26 +14,27 @@ import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 
 public class DrinksViewModel extends ViewModel {
 
-RepoOfDrinks repoOfDrinks = new RepoOfDrinks();
+    RepoOfDrinks repoOfDrinks = new RepoOfDrinks();
 
-MutableLiveData<List<Food>> mFoodList= new MutableLiveData<>();
-Context context ;
+    MutableLiveData<List<Food>> mFoodList = new MutableLiveData<>();
+    Context context;
+
     public DrinksViewModel(Context context) {
-    this.context = context;
+        this.context = context;
     }
 
-    public void getDrinks(){
-         repoOfDrinks.getDrinks().subscribeWith(new DisposableSingleObserver<List<Food>>() {
-             @Override
-             public void onSuccess(@NonNull List<Food> foods) {
-mFoodList.postValue(foods);
-             }
+    public void getDrinks() {
+        repoOfDrinks.getDrinks().subscribeWith(new DisposableSingleObserver<List<Food>>() {
+            @Override
+            public void onSuccess(@NonNull List<Food> foods) {
+                mFoodList.postValue(foods);
+            }
 
-             @Override
-             public void onError(@NonNull Throwable e) {
+            @Override
+            public void onError(@NonNull Throwable e) {
 
-             }
-         });
+            }
+        });
     }
 
 

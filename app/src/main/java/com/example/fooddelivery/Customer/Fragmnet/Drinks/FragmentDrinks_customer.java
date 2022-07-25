@@ -24,7 +24,6 @@ import java.util.List;
 public class FragmentDrinks_customer extends Fragment {
 
     public FragmentDrinks_customer() {
-        // Required empty public constructor
     }
 
     DrinksViewModel drinksViewModel;

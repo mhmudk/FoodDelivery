@@ -29,11 +29,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class FragmentProfile_Delivery extends Fragment implements View.OnClickListener {
 
-    TextView  user_name,phone, location_info, support_info, language_info, activnotification_info, changepassword_info;
-    Button exit,editprofile;
+    TextView user_name, phone, location_info, support_info, language_info, activnotification_info, changepassword_info;
+    Button exit, editprofile;
     FirebaseAuth fauth;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-DeliveryProfileViewModel deliveryProfileViewModel ;
+    DeliveryProfileViewModel deliveryProfileViewModel;
 
 
     public FragmentProfile_Delivery() {
@@ -74,13 +74,12 @@ DeliveryProfileViewModel deliveryProfileViewModel ;
         deliveryProfileViewModel.mutableLiveData.observe(requireActivity(), new Observer<User>() {
             @Override
             public void onChanged(User user) {
-          updateUi(user);
+                updateUi(user);
             }
         });
         deliveryProfileViewModel.getInformation();
 
         onClick();
- //  getInfo();
 
 
         return v;
@@ -107,7 +106,9 @@ DeliveryProfileViewModel deliveryProfileViewModel ;
                 }
             }
         });
-    }  public void viewBind(View v) {
+    }
+
+    public void viewBind(View v) {
         exit = v.findViewById(R.id.signout_delive);
         editprofile = v.findViewById(R.id.gotoLogin_mainprofile_delive);
         user_name = v.findViewById(R.id.name_mainprofile_delive);
@@ -126,7 +127,6 @@ DeliveryProfileViewModel deliveryProfileViewModel ;
         switch (v.getId()) {
             case R.id.mainprofile_location_delive:
                 Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
-
 
 
                 break;
@@ -152,11 +152,9 @@ DeliveryProfileViewModel deliveryProfileViewModel ;
         support_info.setOnClickListener(this);
     }
 
-public void SwitchInfo(View v , User user){
 
-}
-public void updateUi(User user){
-    user_name.setText(user.getName());
-    phone.setText(user.getPhone());
-}
+    public void updateUi(User user) {
+        user_name.setText(user.getName());
+        phone.setText(user.getPhone());
+    }
 }

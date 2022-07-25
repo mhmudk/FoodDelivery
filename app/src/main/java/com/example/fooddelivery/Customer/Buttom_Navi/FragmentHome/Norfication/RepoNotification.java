@@ -18,33 +18,33 @@ import io.reactivex.rxjava3.core.SingleOnSubscribe;
 public class RepoNotification {
 
 
-    public Single<List<Order>> getNotificationOrdres(){
+    public Single<List<Order>> getNotificationOrdres() {
         ArrayList<Order> orderArrayList = new ArrayList<>();
-return Single.create(new SingleOnSubscribe<List<Order>>() {
-    @Override
-    public void subscribe(@io.reactivex.rxjava3.annotations.NonNull SingleEmitter<List<Order>> emitter) throws Throwable {
-        FirebaseDatabase.getInstance().getReference("Orders")
-                .orderByChild("statue").equalTo("delivered")
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if(snapshot.exists()){
+        return Single.create(new SingleOnSubscribe<List<Order>>() {
+            @Override
+            public void subscribe(@io.reactivex.rxjava3.annotations.NonNull SingleEmitter<List<Order>> emitter) throws Throwable {
+                FirebaseDatabase.getInstance().getReference("Orders")
+                        .orderByChild("statue").equalTo("delivered")
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if (snapshot.exists()) {
 
-                        for(DataSnapshot snap :snapshot.getChildren()){
-                            orderArrayList.add(snap.getValue(Order.class));
-                        }
-                    }
+                                    for (DataSnapshot snap : snapshot.getChildren()) {
+                                        orderArrayList.add(snap.getValue(Order.class));
+                                    }
+                                }
 
-                        emitter.onSuccess(orderArrayList);
-                    }
+                                emitter.onSuccess(orderArrayList);
+                            }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-emitter.onError(error.toException());
-                    }
-                });
-    }
-});
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                emitter.onError(error.toException());
+                            }
+                        });
+            }
+        });
 
     }
 }

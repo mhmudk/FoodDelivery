@@ -19,14 +19,14 @@ public class DeliveryRegistration extends AppCompatActivity {
     EditText name, email, phone, password, location;
     Button regist;
     DeliveryViewModel viewmodel;
-    ImageView  back ;
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery);
 
-       findview();
+        findview();
         LoginViewFatory fatory = new LoginViewFatory(this);
         viewmodel = ViewModelProviders.of(this, fatory).get(DeliveryViewModel.class);
         regist.setOnClickListener(new View.OnClickListener() {
@@ -39,14 +39,14 @@ public class DeliveryRegistration extends AppCompatActivity {
                 getPhone = phone.getText().toString().trim();
                 getEmail = email.getText().toString().trim();
                 getLocation = location.getText().toString().trim();
-                if(getName.isEmpty()&&getEmail.isEmpty()&&getPhone.isEmpty()&&getLocation.isEmpty()&&(getPassword.isEmpty())){
+                if (getName.isEmpty() && getEmail.isEmpty() && getPhone.isEmpty() && getLocation.isEmpty() && (getPassword.isEmpty())) {
                     Toast.makeText(DeliveryRegistration.this, "Fields are required", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
 
-                    if(getName.isEmpty()||getEmail.isEmpty()||getPhone.isEmpty()||getLocation.isEmpty()||(getPassword.isEmpty() && getPassword.length()<6)){
+                    if (getName.isEmpty() || getEmail.isEmpty() || getPhone.isEmpty() || getLocation.isEmpty() || (getPassword.isEmpty() && getPassword.length() < 6)) {
                         Toast.makeText(DeliveryRegistration.this, "Please fill Fields", Toast.LENGTH_SHORT).show();
-                    }else{
-                        viewmodel.SignUp(getEmail,getPassword,getName,getEmail, getPhone, getPassword, "Delivery",getLocation);
+                    } else {
+                        viewmodel.SignUp(getEmail, getPassword, getName, getEmail, getPhone, getPassword, "Delivery", getLocation);
                     }
                 }
 
@@ -60,7 +60,8 @@ public class DeliveryRegistration extends AppCompatActivity {
             }
         });
     }
-    public void findview(){
+
+    public void findview() {
         name = findViewById(R.id.name_delivery);
         email = findViewById(R.id.email_delivery);
         phone = findViewById(R.id.phoneee_delivery);

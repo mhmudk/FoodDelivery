@@ -85,7 +85,6 @@ public class FragmnetDessert extends Fragment implements RepoDessert.DessertInte
 
     @Override
     public void Successed() {
-        //Toast.makeText(getContext(), "In fragment Every thing oke", Toast.LENGTH_LONG).show();
     }
 
     @Override

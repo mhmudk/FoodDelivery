@@ -13,25 +13,25 @@ import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 
 public class FriesViewModel extends ViewModel {
-  RepoOfFries repoOfFries = new RepoOfFries();
-MutableLiveData<List<Food>> mFoodList = new MutableLiveData<>();
-Context context;
+    RepoOfFries repoOfFries = new RepoOfFries();
+    MutableLiveData<List<Food>> mFoodList = new MutableLiveData<>();
+    Context context;
 
     public FriesViewModel(Context context) {
         this.context = context;
     }
 
-    public void getFriesData(){
-      repoOfFries.getFries().subscribeWith(new DisposableSingleObserver<List<Food>>() {
-          @Override
-          public void onSuccess(@NonNull List<Food> foods) {
-mFoodList.postValue(foods);
-          }
+    public void getFriesData() {
+        repoOfFries.getFries().subscribeWith(new DisposableSingleObserver<List<Food>>() {
+            @Override
+            public void onSuccess(@NonNull List<Food> foods) {
+                mFoodList.postValue(foods);
+            }
 
-          @Override
-          public void onError(@NonNull Throwable e) {
+            @Override
+            public void onError(@NonNull Throwable e) {
 
-          }
-      });
-  }
+            }
+        });
+    }
 }

@@ -26,8 +26,8 @@ public class AdminPush extends AppCompatActivity implements BottomNavigationView
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment fragment=null;
-        switch (item.getItemId()){
+        Fragment fragment = null;
+        switch (item.getItemId()) {
             case R.id.burger:
                 fragment = new FragmentBurger();
                 break;
@@ -45,8 +45,8 @@ public class AdminPush extends AppCompatActivity implements BottomNavigationView
     }
 
     private boolean loadcheffragment(Fragment fragment) {
-        if (fragment != null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,fragment).commit();
+        if (fragment != null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, fragment).commit();
             return true;
         }
         return false;

@@ -81,11 +81,11 @@ public class FragmentShopping_Customer extends Fragment implements ShoppingAdapt
     private void getCartData() {
 
         ArrayList<CartItem> listIds = cartData.getCart();
-if(listIds.size()==0){
-    maincart.setVisibility(View.GONE);
-    secondcart.setVisibility(View.VISIBLE);
+        if (listIds.size() == 0) {
+            maincart.setVisibility(View.GONE);
+            secondcart.setVisibility(View.VISIBLE);
 
-}
+        }
         listFood = new ArrayList<>();
 
 
@@ -132,7 +132,7 @@ if(listIds.size()==0){
 
     @Override
     public void CheckSize(ArrayList<Food> array) {
-        if(array.size()==0){
+        if (array.size() == 0) {
             maincart.setVisibility(View.GONE);
             secondcart.setVisibility(View.VISIBLE);
         }
@@ -146,7 +146,7 @@ if(listIds.size()==0){
         for (int i = 0; i < listItems.size(); i++) {
             Food food = getFood(listItems.get(i).getId());
             if (food != null) {
-                money += (Integer.parseInt(food.getPrice()) * listItems.get(i).getQuantity()+5);
+                money += (Integer.parseInt(food.getPrice()) * listItems.get(i).getQuantity() + 5);
             }
         }
         Bundle bundle = new Bundle();

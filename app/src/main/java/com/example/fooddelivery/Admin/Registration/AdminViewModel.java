@@ -18,11 +18,12 @@ public class AdminViewModel extends ViewModel {
     public AdminViewModel(Context context) {
         this.context = context;
     }
-    public void SignUp(String email, String password,String name,String email_reg,String phone,String password_reg,String userType,String getLocation){
-        repo.CreateEmail(email,password).subscribeWith(new DisposableSingleObserver<Boolean>() {
+
+    public void SignUp(String email, String password, String name, String email_reg, String phone, String password_reg, String userType, String getLocation) {
+        repo.CreateEmail(email, password).subscribeWith(new DisposableSingleObserver<Boolean>() {
             @Override
             public void onSuccess(@NonNull Boolean aBoolean) {
-                repo.SavingData(new User(name,email_reg,phone,password_reg,userType,getLocation)).subscribeWith(new DisposableSingleObserver<Boolean>() {
+                repo.SavingData(new User(name, email_reg, phone, password_reg, userType, getLocation)).subscribeWith(new DisposableSingleObserver<Boolean>() {
                     @Override
                     public void onSuccess(@NonNull Boolean aBoolean) {
                         LoginManager loginManager = new LoginManager(context);

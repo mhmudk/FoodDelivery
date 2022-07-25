@@ -26,37 +26,36 @@ public class FragmentViewDelivery extends Fragment implements IDoneDeliverey {
     RecyclerView deliveryRec;
     DeliveryOrderAdapter adapter;
     ArrayList<Order> arrayList;
-OrdersOfDeliveryViewModel viewModel ;
+    OrdersOfDeliveryViewModel viewModel;
     DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference("Orders");
     LinearLayout linearSecond;
 
     public FragmentViewDelivery() {
-        // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v  = inflater.inflate(R.layout.fragment_view_delivery, container, false);
+        View v = inflater.inflate(R.layout.fragment_view_delivery, container, false);
         findview(v);
         deliveryRec.setLayoutManager(new LinearLayoutManager(getContext()));
 
         LoginViewFatory fatory = new LoginViewFatory(getContext());
         viewModel = ViewModelProviders.of(this, fatory).get(OrdersOfDeliveryViewModel.class);
 
-viewModel.mutableLiveData.observe(requireActivity(), new Observer<ArrayList<Order>>() {
-    @Override
-    public void onChanged(ArrayList<Order> orders) {
-        if(orders.size() == 0 ){
-            deliveryRec.setVisibility(View.GONE);
-            linearSecond.setVisibility(View.VISIBLE);
-        }
-        updateData(orders);
-    }
-});
-viewModel.getOrders();
-        return  v;
+        viewModel.mutableLiveData.observe(requireActivity(), new Observer<ArrayList<Order>>() {
+            @Override
+            public void onChanged(ArrayList<Order> orders) {
+                if (orders.size() == 0) {
+                    deliveryRec.setVisibility(View.GONE);
+                    linearSecond.setVisibility(View.VISIBLE);
+                }
+                updateData(orders);
+            }
+        });
+        viewModel.getOrders();
+        return v;
     }
 
 
@@ -69,13 +68,13 @@ viewModel.getOrders();
     @Override
     public void done(String position) {
         FirebaseDatabase.getInstance().getReference("Orders")
-               .child(position)
-             .child("statue").setValue("delivered");
+                .child(position)
+                .child("statue").setValue("delivered");
 
 
     }
 
-    public void findview(View v  ) {
+    public void findview(View v) {
         deliveryRec = v.findViewById(R.id.delivery_rec);
         linearSecond = v.findViewById(R.id.second_linear);
 

@@ -15,7 +15,7 @@ import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 public class PizzaViewModel extends ViewModel {
     MutableLiveData<List<Food>> mutableLiveData = new MutableLiveData<>();
     RepoOfPizza repoOfPizza = new RepoOfPizza();
-Context context ;
+    Context context;
 
     public PizzaViewModel(Context context) {
         this.context = context;

@@ -20,7 +20,7 @@ public class Viewflipper extends AppCompatActivity {
     Button next;
     ViewPager pagger;
     TextView tskip;
-    int layout[] = {R.layout.viewvlifpper_one, R.layout.viewvlifpper_two,R.layout.viewvlifpper_three};
+    int layout[] = {R.layout.viewvlifpper_one, R.layout.viewvlifpper_two, R.layout.viewvlifpper_three};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

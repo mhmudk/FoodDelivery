@@ -16,12 +16,12 @@ public class RepoDessert {
     public RepoDessert(DessertInterface dinterface) {
         this.dinterface = dinterface;
     }
-        public void startPushing(Food food, Uri filePath){
-            String uid = ref.push().getKey();
-            food.setId(uid);
-            photo( food , filePath);
-        }
 
+    public void startPushing(Food food, Uri filePath) {
+        String uid = ref.push().getKey();
+        food.setId(uid);
+        photo(food, filePath);
+    }
 
 
     public void photo(Food food, Uri uri) {
@@ -38,8 +38,8 @@ public class RepoDessert {
                                     food.setPicUrl(uri1.toString());
                                     uploadToDataBase(food);
                                 })).addOnFailureListener(exception -> {
-            dinterface.Faild(exception.getMessage());
-        });
+                    dinterface.Faild(exception.getMessage());
+                });
     }
 
 
@@ -53,6 +53,7 @@ public class RepoDessert {
             }
         });
     }
+
     public interface DessertInterface {
         void Successed();
 

@@ -43,7 +43,7 @@ public class RepoC {
             @Override
             public void subscribe(@io.reactivex.rxjava3.annotations.NonNull SingleEmitter<Boolean> emitter) throws Throwable {
 
-              userCu.setId(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                userCu.setId(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(userCu).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

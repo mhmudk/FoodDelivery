@@ -28,8 +28,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class FragmentProfile_Customer extends Fragment implements View.OnClickListener {
 
-    TextView  user_name,phone, location_info, support_info, language_info, activnotification_info, changepassword_info;
-    Button exit,editprofile;
+    TextView user_name, phone, location_info, support_info, language_info, activnotification_info, changepassword_info;
+    Button exit, editprofile;
     FirebaseAuth fauth;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -110,7 +110,6 @@ public class FragmentProfile_Customer extends Fragment implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.mainprofile_location:
-//عادى احط الكود كدا ولا اعمله Functuin ?
                 FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                         .addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -148,22 +147,21 @@ public class FragmentProfile_Customer extends Fragment implements View.OnClickLi
         support_info.setOnClickListener(this);
     }
 
-public void getInfo()
-{
-    FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-            .addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    User user = snapshot.getValue(User.class);
-                 user_name.setText(user.getName());
-                 phone.setText(user.getPhone());
-                }
+    public void getInfo() {
+        FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        User user = snapshot.getValue(User.class);
+                        user_name.setText(user.getName());
+                        phone.setText(user.getPhone());
+                    }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-                }
-            });
-}
+                    }
+                });
+    }
 
 }

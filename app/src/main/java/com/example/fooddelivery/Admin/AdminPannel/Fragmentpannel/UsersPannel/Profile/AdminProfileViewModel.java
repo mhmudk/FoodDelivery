@@ -12,13 +12,15 @@ import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 
 public class AdminProfileViewModel extends ViewModel {
     Context context;
-MutableLiveData<User> mutableLiveData = new MutableLiveData<>();
+    MutableLiveData<User> mutableLiveData = new MutableLiveData<>();
+
     public AdminProfileViewModel(Context context) {
         this.context = context;
     }
+
     RepoOfProfileAdmin repo = new RepoOfProfileAdmin();
 
-    public void getInformation(){
+    public void getInformation() {
         repo.getInfo().subscribeWith(new DisposableSingleObserver<User>() {
             @Override
             public void onSuccess(@NonNull User user) {

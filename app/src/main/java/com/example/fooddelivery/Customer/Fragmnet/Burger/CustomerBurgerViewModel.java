@@ -13,9 +13,9 @@ import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 
 public class CustomerBurgerViewModel extends ViewModel {
-Context context ;
+    Context context;
     RepoOfBurger repoOfBurger = new RepoOfBurger();
-    MutableLiveData<List<Food>> mFoodList=new MutableLiveData<>();
+    MutableLiveData<List<Food>> mFoodList = new MutableLiveData<>();
 
     public CustomerBurgerViewModel(Context context) {
         this.context = context;
@@ -31,7 +31,7 @@ Context context ;
             @Override
             public void onError(@NonNull Throwable e) {
 
-}
+            }
         });
     }
 }

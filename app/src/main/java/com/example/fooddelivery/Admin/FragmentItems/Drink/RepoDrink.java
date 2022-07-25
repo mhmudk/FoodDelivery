@@ -11,15 +11,17 @@ import com.google.firebase.storage.StorageReference;
 public class RepoDrink {
     DrinktInterface drinktInterface;
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Food");
-    StorageReference store =  FirebaseStorage.getInstance().getReference("food");
+    StorageReference store = FirebaseStorage.getInstance().getReference("food");
+
     public RepoDrink(DrinktInterface drinktInterface) {
         this.drinktInterface = drinktInterface;
     }
-   public void StartPushing(Food food, Uri filePath){
-       String uid = ref.push().getKey();
-       food.setId(uid);
-       photo(food,filePath);
-   }
+
+    public void StartPushing(Food food, Uri filePath) {
+        String uid = ref.push().getKey();
+        food.setId(uid);
+        photo(food, filePath);
+    }
 
 
     public void photo(Food food, Uri uri) {
@@ -36,8 +38,8 @@ public class RepoDrink {
                                     food.setPicUrl(uri1.toString());
                                     uploadToDataBase(food);
                                 })).addOnFailureListener(exception -> {
-            drinktInterface.Faild(exception.getMessage());
-        });
+                    drinktInterface.Faild(exception.getMessage());
+                });
     }
 
     public void uploadToDataBase(Food food) {

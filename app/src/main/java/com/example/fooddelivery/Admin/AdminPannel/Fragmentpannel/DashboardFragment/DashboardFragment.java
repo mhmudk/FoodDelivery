@@ -23,7 +23,7 @@ import com.example.fooddelivery.R;
 
 public class DashboardFragment extends Fragment {
     TextView numberOfdelivery, numberOfusers, numberOforders;
-    Button btn_orders, btn_food,search;
+    Button btn_orders, btn_food, search;
     ImageView menu;
     DashBoardViewModel dashBoardViewModel;
 
@@ -40,7 +40,7 @@ public class DashboardFragment extends Fragment {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),FoodItem.class));
+                startActivity(new Intent(getApplicationContext(), FoodItem.class));
             }
         });
         btn_food.setOnClickListener(new View.OnClickListener() {
@@ -56,21 +56,21 @@ public class DashboardFragment extends Fragment {
             }
         });
         LoginViewFatory fatory = new LoginViewFatory(getApplicationContext());
-  dashBoardViewModel = ViewModelProviders.of(this, fatory).get(DashBoardViewModel.class);
-search.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        startActivity(new Intent(getApplicationContext(),FoodItem.class));
-    }
-});
+        dashBoardViewModel = ViewModelProviders.of(this, fatory).get(DashBoardViewModel.class);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), FoodItem.class));
+            }
+        });
 
-dashBoardViewModel.mutableLiveData.observe(requireActivity(), new Observer<Integer>() {
-    @Override
-    public void onChanged(Integer integer) {
-        updateUi(integer);
-    }
-});
-dashBoardViewModel.getData();
+        dashBoardViewModel.mutableLiveData.observe(requireActivity(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                updateUi(integer);
+            }
+        });
+        dashBoardViewModel.getData();
         return v;
     }
 
@@ -84,10 +84,10 @@ dashBoardViewModel.getData();
         search = v.findViewById(R.id.search_admin_menu);
     }
 
-    public void updateUi( int  count ){
-        numberOfusers.setText(count+"");
-        numberOfdelivery.setText(count+"");
-        numberOforders.setText(count+"");
+    public void updateUi(int count) {
+        numberOfusers.setText(count + "");
+        numberOfdelivery.setText(count + "");
+        numberOforders.setText(count + "");
     }
 
 }

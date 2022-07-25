@@ -36,7 +36,7 @@ public class ActivityDetials extends AppCompatActivity {
     DetailsAdapater adapter;
     CheckBox lettuce, pepper, olive;
     int lettuce_price = 5, pepper_price = 7, olive_price = 6;
-    ImageView image,backtoViewCustomer;
+    ImageView image, backtoViewCustomer;
     Button plus, minus, checkout;
     TextView txt_name, description, count, total_price;
     String getprice, getId;
@@ -106,6 +106,7 @@ public class ActivityDetials extends AppCompatActivity {
         total = itemPrice * counter;
         total_price.setText(total + "");
     }
+
     public void getFood() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Food");
 
@@ -131,10 +132,12 @@ public class ActivityDetials extends AppCompatActivity {
             }
         });
     }
+
     public void updateFood(ArrayList<Food> food) {
         adapter = new DetailsAdapater(getApplicationContext(), food);
         rec.setAdapter(adapter);
     }
+
     public void bind() {
         image = findViewById(R.id.img_details);
         backtoViewCustomer = findViewById(R.id.back_viewCustomerfromdetails);
@@ -151,6 +154,7 @@ public class ActivityDetials extends AppCompatActivity {
         rec = findViewById(R.id.re);
         rec.setLayoutManager(new LinearLayoutManager(this));
     }
+
     public void checkBox() {
         lettuce.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -193,6 +197,7 @@ public class ActivityDetials extends AppCompatActivity {
             }
         });
     }
+
     public void getFoodItem() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Food");
 

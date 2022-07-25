@@ -9,13 +9,15 @@ import androidx.lifecycle.ViewModel;
 import com.example.fooddelivery.pojo.Food;
 
 public class DrinkViewModel extends ViewModel implements RepoDrink.DrinktInterface {
-   Context context;
-RepoDrink repoDrink = new RepoDrink(this);
+    Context context;
+    RepoDrink repoDrink = new RepoDrink(this);
+
     public DrinkViewModel(Context context) {
         this.context = context;
     }
-    public void Uploaddata(Food food, Uri filePath){
-        repoDrink.StartPushing(food,filePath);
+
+    public void Uploaddata(Food food, Uri filePath) {
+        repoDrink.StartPushing(food, filePath);
     }
 
     @Override

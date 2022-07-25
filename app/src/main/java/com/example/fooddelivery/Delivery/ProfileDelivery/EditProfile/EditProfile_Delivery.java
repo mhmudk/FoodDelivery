@@ -30,13 +30,13 @@ public class EditProfile_Delivery extends AppCompatActivity {
     TextView txt_name;
     EditText name_edit, email_edit, mobilenumber_edit, location_edit;
     Button save;
-EditProfileDeliverViewModel viewModel;
+    EditProfileDeliverViewModel viewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile_delivery);
         findView();
-       // getProfileDetails();
         LoginViewFatory fatory = new LoginViewFatory(getApplicationContext());
         viewModel = ViewModelProviders.of(this, fatory).get(EditProfileDeliverViewModel.class);
 
@@ -56,40 +56,26 @@ EditProfileDeliverViewModel viewModel;
             mobilenumber_edit.setVisibility(View.GONE);
             location_edit.setVisibility(View.GONE);
         }
-viewModel.mutableLiveData.observe(this, new Observer<User>() {
-    @Override
-    public void onChanged(User user) {
-        updateUi(user);
-    }
-});
+        viewModel.mutableLiveData.observe(this, new Observer<User>() {
+            @Override
+            public void onChanged(User user) {
+                updateUi(user);
+            }
+        });
         viewModel.getInformation();
     }
 
-    public void getProfileDetails() {
-        FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        User user = snapshot.getValue(User.class);
+
+    public void updateUi(User user) {
+        name_edit.setText(user.getName());
+        txt_name.setText(user.getName());
+        email_edit.setText(user.getEmail());
+        mobilenumber_edit.setText(user.getPhone());
+        location_edit.setText(user.getLocation());
 
 
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
     }
-public void updateUi(User user){
-    name_edit.setText(user.getName());
-    txt_name.setText(user.getName());
-    email_edit.setText(user.getEmail());
-    mobilenumber_edit.setText(user.getPhone());
-    location_edit.setText(user.getLocation());
 
-
-}
     public void findView() {
         name_edit = findViewById(R.id.edit_name_profile_deliv);
         email_edit = findViewById(R.id.edit_email_profile_deliv);

@@ -19,13 +19,13 @@ import com.example.fooddelivery.R;
 import com.example.fooddelivery.pojo.Food;
 
 
-public class FragmentFries extends Fragment  {
+public class FragmentFries extends Fragment {
     EditText name, descri, price, time;
     Button add, signout;
     String getname, getdes, getprice, gettime;
     BurgerViewModel viewmodel;
     ImageView imageView;
-     Uri filePath;
+    Uri filePath;
 
 
     public FragmentFries() {

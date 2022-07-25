@@ -14,21 +14,21 @@ import io.reactivex.rxjava3.core.SingleEmitter;
 import io.reactivex.rxjava3.core.SingleOnSubscribe;
 
 public class RepoOfEditProfileDelivery {
-    public Single<User> getInfo(){
+    public Single<User> getInfo() {
         return Single.create(new SingleOnSubscribe<User>() {
             @Override
             public void subscribe(@io.reactivex.rxjava3.annotations.NonNull SingleEmitter<User> emitter) throws Throwable {
                 FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                .addListenerForSingleValueEvent(new ValueEventListener() {
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 User user = snapshot.getValue(User.class);
-                       emitter.onSuccess(user);
+                                emitter.onSuccess(user);
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
-emitter.onError(error.toException());
+                                emitter.onError(error.toException());
                             }
                         });
             }

@@ -59,7 +59,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView img, cansel;
-        TextView name, price,description;
+        TextView name, price, description;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -73,7 +73,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
 
         public void updateUiFavourite(Food food) {
             name.setText(food.getName());
-            price.setText(food.getPrice() +"");
+            price.setText(food.getPrice() + "");
             description.setText(food.getDecsription());
             Glide.with(mContext).load(food.getPicUrl()).diskCacheStrategy(DiskCacheStrategy.DATA).into(img);
 

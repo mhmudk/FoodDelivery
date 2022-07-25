@@ -10,19 +10,17 @@ import androidx.lifecycle.ViewModel;
 import com.example.fooddelivery.pojo.Food;
 
 public class BurgerViewModel extends ViewModel implements RepoBurger.BurgerInterface {
-    Context context ;
+    Context context;
     RepoBurger repoBurger = new RepoBurger(this);
 
     public BurgerViewModel(Context context) {
         this.context = context;
     }
-public void pushh(Food food,Uri u){
-    repoBurger.push(food,u);
-}
-    public void uploadData(Food food, Uri filePath){
-       //repoBurger.startPushingToDatabase(food,filePath);
 
+    public void pushh(Food food, Uri u) {
+        repoBurger.push(food, u);
     }
+
 
     @Override
     public void Successed(Food food) {
@@ -33,6 +31,6 @@ public void pushh(Food food,Uri u){
     @Override
     public void Faild(String error) {
 
-        Toast.makeText(context, "Faild"+error, Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Faild" + error, Toast.LENGTH_LONG).show();
     }
 }

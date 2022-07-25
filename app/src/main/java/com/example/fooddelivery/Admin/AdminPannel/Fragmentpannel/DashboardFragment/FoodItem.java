@@ -27,7 +27,7 @@ public class FoodItem extends AppCompatActivity {
     RecyclerView rec;
     MenuAdapater adapter;
     SearchView search;
-    ImageView back ;
+    ImageView back;
     ArrayList<Food> list = new ArrayList<>();
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Food");
 
@@ -55,13 +55,13 @@ public class FoodItem extends AppCompatActivity {
                 return true;
             }
         });
-    back.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            startActivity(new Intent(getApplicationContext(), AdminPannel.class));
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AdminPannel.class));
 
-        }
-    });
+            }
+        });
     }
 
     public void filter(String newText) {

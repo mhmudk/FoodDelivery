@@ -13,9 +13,10 @@ import com.example.fooddelivery.Admin.AdminPannel.Fragmentpannel.UsersPannel.Pro
 import com.example.fooddelivery.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class AdminPannel extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener  {
+public class AdminPannel extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView navigationView;
     Boolean pressed = false;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,7 @@ public class AdminPannel extends AppCompatActivity implements BottomNavigationVi
         navigationView = findViewById(R.id.bottom_navigation_adminpannel);
         navigationView.setOnNavigationItemSelectedListener(this);
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
@@ -52,11 +54,11 @@ public class AdminPannel extends AppCompatActivity implements BottomNavigationVi
 
     @Override
     public void onBackPressed() {
-        if(pressed){
+        if (pressed) {
 
             super.onBackPressed();
-        }else{
-            return ;
+        } else {
+            return;
         }
     }
 

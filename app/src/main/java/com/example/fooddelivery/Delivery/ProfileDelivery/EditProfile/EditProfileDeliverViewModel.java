@@ -11,13 +11,15 @@ import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 
 public class EditProfileDeliverViewModel extends ViewModel {
-    Context context ;
-RepoOfEditProfileDelivery repoOfDeliveryProfile = new RepoOfEditProfileDelivery();
-MutableLiveData<User>  mutableLiveData = new MutableLiveData<>();
-public EditProfileDeliverViewModel(Context context) {
+    Context context;
+    RepoOfEditProfileDelivery repoOfDeliveryProfile = new RepoOfEditProfileDelivery();
+    MutableLiveData<User> mutableLiveData = new MutableLiveData<>();
+
+    public EditProfileDeliverViewModel(Context context) {
         this.context = context;
     }
-    public void getInformation(){
+
+    public void getInformation() {
         repoOfDeliveryProfile.getInfo().subscribeWith(new DisposableSingleObserver<User>() {
             @Override
             public void onSuccess(@NonNull User user) {

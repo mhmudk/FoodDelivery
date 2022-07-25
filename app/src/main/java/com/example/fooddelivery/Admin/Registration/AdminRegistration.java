@@ -50,7 +50,7 @@ public class AdminRegistration extends AppCompatActivity {
 
                         Toast.makeText(AdminRegistration.this, "Please Fill Fields", Toast.LENGTH_SHORT).show();
                     } else {
-viewmodel.SignUp(getemail,getpassowrd,getname,getemail,getphone,getpassowrd,"Admin",getLocation);
+                        viewmodel.SignUp(getemail, getpassowrd, getname, getemail, getphone, getpassowrd, "Admin", getLocation);
                     }
                 }
             }

@@ -21,26 +21,26 @@ public class RepoOfCourier {
     public Single<List<User>> getDeliveryData() {
         DatabaseReference deliveryRef = FirebaseDatabase.getInstance().getReference("Users");
         ArrayList<User> listUser = new ArrayList<>();
-    return Single.create(new SingleOnSubscribe<List<User>>() {
-        @Override
-        public void subscribe(@io.reactivex.rxjava3.annotations.NonNull SingleEmitter<List<User>> emitter) throws Throwable {
-            deliveryRef.orderByChild("usertype").equalTo("Delivery").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    for (DataSnapshot ds : snapshot.getChildren()) {
-                        listUser.add(ds.getValue(User.class));
+        return Single.create(new SingleOnSubscribe<List<User>>() {
+            @Override
+            public void subscribe(@io.reactivex.rxjava3.annotations.NonNull SingleEmitter<List<User>> emitter) throws Throwable {
+                deliveryRef.orderByChild("usertype").equalTo("Delivery").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds : snapshot.getChildren()) {
+                            listUser.add(ds.getValue(User.class));
+                        }
+                        emitter.onSuccess(listUser);
+
                     }
-emitter.onSuccess(listUser);
 
-                }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        emitter.onError(error.toException());
+                    }
+                });
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-emitter.onError(error.toException());
-                }
-            });
-
-        }
-    });
+            }
+        });
     }
 }

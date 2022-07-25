@@ -62,13 +62,13 @@ public class DeliveryCheckout extends AppCompatActivity {
             order.setUserUid(FirebaseAuth.getInstance().getCurrentUser().getUid());
             ordersRef.child(orderId)
                     .setValue(order).addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    Toast.makeText(DeliveryCheckout.this, "Order Sent Successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), ViewCustomer.class));
-                } else {
-                    Toast.makeText(DeliveryCheckout.this, "Order Sent Failed", Toast.LENGTH_SHORT).show();
-                }
-            });
+                        if (task.isSuccessful()) {
+                            Toast.makeText(DeliveryCheckout.this, "Order Sent Successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), ViewCustomer.class));
+                        } else {
+                            Toast.makeText(DeliveryCheckout.this, "Order Sent Failed", Toast.LENGTH_SHORT).show();
+                        }
+                    });
         }
     }
 
@@ -90,8 +90,6 @@ public class DeliveryCheckout extends AppCompatActivity {
         }
         return orderProductItems;
     }
-
-
 
 
 }

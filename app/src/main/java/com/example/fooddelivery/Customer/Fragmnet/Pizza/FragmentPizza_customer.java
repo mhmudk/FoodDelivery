@@ -46,7 +46,7 @@ public class FragmentPizza_customer extends Fragment {
                 updateAdapter(new ArrayList(foods));
             }
         });
-pizzaViewModel.getPizzaData();
+        pizzaViewModel.getPizzaData();
         return v;
     }
 

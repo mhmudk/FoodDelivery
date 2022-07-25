@@ -25,8 +25,8 @@ import com.example.fooddelivery.R;
 
 import java.util.ArrayList;
 
-public class FragmentHome_Customer extends Fragment implements View.OnClickListener,CustomerNotification.sentNoification {
-    ImageView drinks, pizza, burger, notification,notifvisible, fries;
+public class FragmentHome_Customer extends Fragment implements View.OnClickListener, CustomerNotification.sentNoification {
+    ImageView drinks, pizza, burger, notification, notifvisible, fries;
     TextView burger_text, drinks_text_, pizza_textview, fries_text;
     int curuntImageSelected = -1, currentTextSelected = -1;
     ImageSlider img;
@@ -49,7 +49,7 @@ public class FragmentHome_Customer extends Fragment implements View.OnClickListe
                 getContext().startActivity(new Intent(getContext(), SearchFood.class));
             }
         });
-       notification.setOnClickListener(new View.OnClickListener() {
+        notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), CustomerNotification.class));
@@ -66,8 +66,8 @@ public class FragmentHome_Customer extends Fragment implements View.OnClickListe
         pizza.setOnClickListener(this);
         pizza_textview.setOnClickListener(this);
         burger.setSelected(true);
-        burger_text.setTextColor(ContextCompat.getColor(requireContext(),R.color.maincolor));
-        currentTextSelected=R.id.burger_select;
+        burger_text.setTextColor(ContextCompat.getColor(requireContext(), R.color.maincolor));
+        currentTextSelected = R.id.burger_select;
     }
 
     @Override
@@ -76,10 +76,10 @@ public class FragmentHome_Customer extends Fragment implements View.OnClickListe
         if (curuntImageSelected == view.getId() && currentTextSelected == view.getId()) {
             return;
         }
-        if (curuntImageSelected != -1 ) {
+        if (curuntImageSelected != -1) {
             view.getRootView().findViewById(curuntImageSelected).setSelected(false);
         }
-        if(currentTextSelected !=-1) {
+        if (currentTextSelected != -1) {
             ((TextView) view.getRootView().findViewById(currentTextSelected)).setTextColor(Color.parseColor("#000000"));
         }
         Fragment fragment1 = null;
@@ -88,31 +88,31 @@ public class FragmentHome_Customer extends Fragment implements View.OnClickListe
                 fragment1 = new FragmentBurger_customer();
                 burger.setSelected(true);
                 curuntImageSelected = R.id.burger_cu;
-                currentTextSelected =R.id.burger_select;
-                burger_text.setTextColor(ContextCompat.getColor(requireContext(),R.color.maincolor));
+                currentTextSelected = R.id.burger_select;
+                burger_text.setTextColor(ContextCompat.getColor(requireContext(), R.color.maincolor));
 
                 break;
             case R.id.drinks_cu:
                 fragment1 = new FragmentDrinks_customer();
                 drinks.setSelected(true);
                 curuntImageSelected = R.id.drinks_cu;
-                currentTextSelected =R.id.drink_text;
-                drinks_text_.setTextColor(ContextCompat.getColor(requireContext(),R.color.maincolor));
+                currentTextSelected = R.id.drink_text;
+                drinks_text_.setTextColor(ContextCompat.getColor(requireContext(), R.color.maincolor));
                 break;
             case R.id.pizza_cu:
                 fragment1 = new FragmentPizza_customer();
                 pizza.setSelected(true);
                 curuntImageSelected = R.id.pizza_cu;
-                currentTextSelected =R.id.pizza_text;
-                 pizza_textview.setTextColor(ContextCompat.getColor(requireContext(),R.color.maincolor));
+                currentTextSelected = R.id.pizza_text;
+                pizza_textview.setTextColor(ContextCompat.getColor(requireContext(), R.color.maincolor));
 
                 break;
             case R.id.fries_cu:
                 fragment1 = new FragmentFries_customer();
                 fries.setSelected(true);
                 curuntImageSelected = R.id.fries_cu;
-                currentTextSelected =R.id.fries_text_id;
-                fries_text.setTextColor(ContextCompat.getColor(requireContext(),R.color.maincolor));
+                currentTextSelected = R.id.fries_text_id;
+                fries_text.setTextColor(ContextCompat.getColor(requireContext(), R.color.maincolor));
 
                 break;
         }

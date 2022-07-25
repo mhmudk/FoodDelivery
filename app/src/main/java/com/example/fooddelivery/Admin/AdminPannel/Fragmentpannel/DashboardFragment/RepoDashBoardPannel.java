@@ -43,7 +43,6 @@ public class RepoDashBoardPannel {
     }
 
 
-
     public Single<Integer> getNumberOfDeliverys() {
 
         return Single.create(new SingleOnSubscribe<Integer>() {

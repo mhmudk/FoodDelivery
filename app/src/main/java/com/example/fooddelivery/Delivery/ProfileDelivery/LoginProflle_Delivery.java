@@ -11,17 +11,18 @@ import com.example.fooddelivery.Login.LogInRegistration.LogIn;
 import com.example.fooddelivery.R;
 
 public class LoginProflle_Delivery extends AppCompatActivity {
-Button goToLogin ;
+    Button goToLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_proflle_delivery);
-goToLogin = findViewById(R.id.gotoLogin_deli);
-goToLogin.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        startActivity(new Intent(getApplicationContext(), LogIn.class));
-    }
-});
+        goToLogin = findViewById(R.id.gotoLogin_deli);
+        goToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), LogIn.class));
+            }
+        });
     }
 }

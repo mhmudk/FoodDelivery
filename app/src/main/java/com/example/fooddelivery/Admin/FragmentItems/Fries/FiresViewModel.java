@@ -15,19 +15,19 @@ public class FiresViewModel extends ViewModel {
     Context context;
     RepoFries repoBurger = new RepoFries();
 
-public void pushh(Food food,Uri u){
-    repoBurger.push(food,u).subscribeWith(new DisposableSingleObserver<Boolean>() {
-        @Override
-        public void onSuccess(@NonNull Boolean aBoolean) {
-            Toast.makeText(context, "Successed ", Toast.LENGTH_SHORT).show();
-        }
+    public void pushh(Food food, Uri u) {
+        repoBurger.push(food, u).subscribeWith(new DisposableSingleObserver<Boolean>() {
+            @Override
+            public void onSuccess(@NonNull Boolean aBoolean) {
+                Toast.makeText(context, "Successed ", Toast.LENGTH_SHORT).show();
+            }
 
-        @Override
-        public void onError(@NonNull Throwable e) {
-            Toast.makeText(context, "Faild"+e, Toast.LENGTH_LONG).show();
-        }
-    });
-}
+            @Override
+            public void onError(@NonNull Throwable e) {
+                Toast.makeText(context, "Faild" + e, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
 
 
 }

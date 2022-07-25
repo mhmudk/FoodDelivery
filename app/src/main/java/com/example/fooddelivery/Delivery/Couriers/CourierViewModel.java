@@ -13,18 +13,19 @@ import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 
 public class CourierViewModel extends ViewModel {
-    MutableLiveData<List<User>> mutableLiveData  = new MutableLiveData<>();
-    Context context ;
-RepoOfCourier repoOfCourier = new RepoOfCourier();
+    MutableLiveData<List<User>> mutableLiveData = new MutableLiveData<>();
+    Context context;
+    RepoOfCourier repoOfCourier = new RepoOfCourier();
+
     public CourierViewModel(Context context) {
         this.context = context;
     }
 
-    public void getDeliveryCouriers(){
+    public void getDeliveryCouriers() {
         repoOfCourier.getDeliveryData().subscribeWith(new DisposableSingleObserver<List<User>>() {
             @Override
             public void onSuccess(@NonNull List<User> users) {
-           mutableLiveData.postValue(users);
+                mutableLiveData.postValue(users);
             }
 
             @Override

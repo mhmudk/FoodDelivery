@@ -16,22 +16,22 @@ import io.reactivex.rxjava3.core.SingleOnSubscribe;
 
 public class Repo {
 
- FirebaseDatabase firebaseDatabase =FirebaseDatabase.getInstance();
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
-    DatabaseReference databaseReference=firebaseDatabase.getReference("Users");
+    DatabaseReference databaseReference = firebaseDatabase.getReference("Users");
 
 
-    public Single<Boolean> CreateEmail( String email, String password){
+    public Single<Boolean> CreateEmail(String email, String password) {
         return Single.create(new SingleOnSubscribe<Boolean>() {
             @Override
             public void subscribe(@io.reactivex.rxjava3.annotations.NonNull SingleEmitter<Boolean> emitter) throws Throwable {
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
-                                 emitter.onSuccess(true);
-                                }else{
+                                if (task.isSuccessful()) {
+                                    emitter.onSuccess(true);
+                                } else {
                                     emitter.onError(task.getException());
                                 }
                             }
@@ -40,6 +40,7 @@ public class Repo {
         });
 
     }
+
     public Single<Boolean> SavingData(User userAd) {
         return Single.create(new SingleOnSubscribe<Boolean>() {
             @Override
@@ -49,9 +50,9 @@ public class Repo {
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-                                if(task.isSuccessful()){
-                              emitter.onSuccess(true);
-                                }else{
+                                if (task.isSuccessful()) {
+                                    emitter.onSuccess(true);
+                                } else {
                                     emitter.onError(task.getException());
                                 }
                             }
@@ -60,11 +61,7 @@ public class Repo {
         });
 
 
-
     }
 
-    public interface CreateMethod{
-        void Successed();
-        void Error(String error);
-    }
+
 }

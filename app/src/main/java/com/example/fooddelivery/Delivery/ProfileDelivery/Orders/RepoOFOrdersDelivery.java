@@ -19,32 +19,32 @@ public class RepoOFOrdersDelivery {
     public Single<ArrayList<Order>> getOrders() {
         DatabaseReference ordersRef = FirebaseDatabase.getInstance().getReference("Orders");
 
-       ;
-       ArrayList<Order> arrayList = new ArrayList<>();
-return Single.create(new SingleOnSubscribe<ArrayList<Order>>() {
-    @Override
-    public void subscribe(@NonNull SingleEmitter<ArrayList<Order>> emitter) throws Throwable {
+        ;
+        ArrayList<Order> arrayList = new ArrayList<>();
+        return Single.create(new SingleOnSubscribe<ArrayList<Order>>() {
+            @Override
+            public void subscribe(@NonNull SingleEmitter<ArrayList<Order>> emitter) throws Throwable {
 
-        ordersRef.orderByChild("courierId").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot snapshot) {
-                        for (DataSnapshot snap : snapshot.getChildren()) {
-                            arrayList.add(snap.getValue(Order.class));
+                ordersRef.orderByChild("courierId").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                for (DataSnapshot snap : snapshot.getChildren()) {
+                                    arrayList.add(snap.getValue(Order.class));
 
-                        }
-emitter.onSuccess(arrayList);
-                    }
+                                }
+                                emitter.onSuccess(arrayList);
+                            }
 
-                    @Override
-                    public void onCancelled(DatabaseError error) {
-emitter.onError(error.toException());
-                    }
-                });
+                            @Override
+                            public void onCancelled(DatabaseError error) {
+                                emitter.onError(error.toException());
+                            }
+                        });
 
 
-    }
-});
+            }
+        });
 
     }
 }

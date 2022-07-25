@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class FragmentBurger extends Fragment implements RepoBurger.BurgerInterface {
     EditText name, descri, price, time;
-    Button add, signout;
+    Button add;
     String getname, getdes, getprice, gettime;
     BurgerViewModel mvvm;
     public ImageView imageView;
@@ -58,19 +58,10 @@ public class FragmentBurger extends Fragment implements RepoBurger.BurgerInterfa
                 Food food = new Food(getname, getdes, getprice,
                         gettime, "Burger");
                 mvvm.pushh(food, filePath);
-                //mvvm.uploadData(food,filePath);
-            }
-        });
-        /*
-        signout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                getContext().startActivity(new Intent(getContext(), LogIn.class));
 
             }
         });
-        */
+
         return v;
     }
 

@@ -14,32 +14,33 @@ import com.example.fooddelivery.Login.LogInRegistration.LogIn;
 import com.example.fooddelivery.R;
 
 public class KeepOn extends AppCompatActivity {
-Button login , create_acc ;
-ImageView home ;
+    Button login, create_acc;
+    ImageView home;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.keepon);
-   findview();
-   login.setOnClickListener(new View.OnClickListener() {
-       @Override
-       public void onClick(View view) {
-           startActivity(new Intent(getApplicationContext(), LogIn.class));
-       }
-   });
-   create_acc.setOnClickListener(new View.OnClickListener() {
-       @Override
-       public void onClick(View view) {
-           startActivity(new Intent(getApplicationContext(), CreateAccount.class));
-       }
+        findview();
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), LogIn.class));
+            }
+        });
+        create_acc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), CreateAccount.class));
+            }
 
-   });
-   home.setOnClickListener(new View.OnClickListener() {
-       @Override
-       public void onClick(View view) {
-           startActivity(new Intent(getApplicationContext(), ViewCustomer.class));
-       }
-   });
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ViewCustomer.class));
+            }
+        });
     }
 
     private void findview() {

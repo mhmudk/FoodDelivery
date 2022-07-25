@@ -137,6 +137,7 @@
             android:background="@drawable/btn_lognin"
             android:drawableLeft="@drawable/lockk"
             android:drawablePadding="@dimen/_5sdp"
+            android:inputType="numberPassword"
             android:hint="Password"
             android:padding="@dimen/_3sdp" />
 
@@ -149,6 +150,7 @@
             android:background="@drawable/btn_lognin"
             android:drawableLeft="@drawable/lockk"
             android:drawablePadding="@dimen/_5sdp"
+            android:inputType="numberPassword"
             android:hint="Confirm Password"
             android:padding="@dimen/_3sdp" />
 

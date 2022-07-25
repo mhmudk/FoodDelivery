@@ -45,15 +45,13 @@ public class DeliveryOrderAdapter extends RecyclerView.Adapter<DeliveryOrderAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Order order = orderArrayList.get(position);
         holder.updateUi(order);
-        String id  = orderArrayList.get(position).getOrderId();
+        String id = orderArrayList.get(position).getOrderId();
 
         holder.done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                FirebaseDatabase.getInstance().getReference("Orders")
-//               .child(id)
-//              .child("statue").setValue("delivered");
-            iDoneDeliverey.done(id);
+
+                iDoneDeliverey.done(id);
             }
         });
     }
@@ -62,8 +60,6 @@ public class DeliveryOrderAdapter extends RecyclerView.Adapter<DeliveryOrderAdap
     public int getItemCount() {
         return orderArrayList.size();
     }
-
-
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -86,8 +82,8 @@ public class DeliveryOrderAdapter extends RecyclerView.Adapter<DeliveryOrderAdap
         private void updateUi(Order order) {
             getUsername(order.getUserUid());
             location.setText(order.getAdress());
-            price.setText(order.getTotalPrice() + "EGP");
-            pieces.setText(order.getQuantity() + "Pieces");
+            price.setText(order.getTotalPrice() + "");
+            pieces.setText(order.getQuantity() + " Pieces");
 
         }
 
@@ -109,6 +105,4 @@ public class DeliveryOrderAdapter extends RecyclerView.Adapter<DeliveryOrderAdap
             });
         }
     }
-//هو حقته يجيب كل الاوردرز ال انا موصلهلاله
-//هندسه هو حقته دلوقتي يجيب كل الاوردر ال باسمه فهمني ؟ اه مش عارف لي مش راضي يظهر  الاوردر هو ممكن يكون من دي بص كدا
 }

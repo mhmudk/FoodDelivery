@@ -19,10 +19,11 @@ import com.example.fooddelivery.pojo.Food;
 
 import java.util.ArrayList;
 
-public class DetailsAdapater extends RecyclerView.Adapter<DetailsAdapater.ViewHolder>  {
+public class DetailsAdapater extends RecyclerView.Adapter<DetailsAdapater.ViewHolder> {
     ArrayList<Food> list;
     Context context;
     CartData cartData;
+
     public DetailsAdapater(Context context, ArrayList<Food> list) {
         this.list = list;
         this.context = context;
@@ -44,12 +45,12 @@ public class DetailsAdapater extends RecyclerView.Adapter<DetailsAdapater.ViewHo
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(cartData.isInCart(food.getId(),context)){
-                    cartData.remove(food.getId(),context);
+                if (cartData.isInCart(food.getId(), context)) {
+                    cartData.remove(food.getId(), context);
                     Toast.makeText(context, "Item Add to Cart", Toast.LENGTH_SHORT).show();
                     holder.UpdateUi(food);
-                }else{
-                    cartData.addToCart(food.getId(),context);
+                } else {
+                    cartData.addToCart(food.getId(), context);
                     Toast.makeText(context, "Item Removed to Cart", Toast.LENGTH_SHORT).show();
 
                     holder.UpdateUi(food);
@@ -66,7 +67,8 @@ public class DetailsAdapater extends RecyclerView.Adapter<DetailsAdapater.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
         TextView name, price;
-Button add ;
+        Button add;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.imageView9);
@@ -79,12 +81,13 @@ Button add ;
         public void updateFood(Food food) {
             Glide.with(itemView).load(food.getPicUrl()).into(img);
             name.setText(food.getName());
-            price.setText(food.getPrice()+"");
+            price.setText(food.getPrice() + "");
         }
-        public void UpdateUi(Food food){
-            if(cartData.isInCart(food.getId(),context)){
+
+        public void UpdateUi(Food food) {
+            if (cartData.isInCart(food.getId(), context)) {
                 add.setText("-");
-            }else{
+            } else {
                 add.setText("+");
             }
         }

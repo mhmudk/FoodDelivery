@@ -16,7 +16,8 @@ public class DeliveryViewModel extends ViewModel {
     Context context;
 
     RepoDeliveryPannel repo = new RepoDeliveryPannel();
-MutableLiveData<ArrayList<User>> mutableLiveData = new MutableLiveData<>();
+    MutableLiveData<ArrayList<User>> mutableLiveData = new MutableLiveData<>();
+
     public DeliveryViewModel(Context context) {
         this.context = context;
     }

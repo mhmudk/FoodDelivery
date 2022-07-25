@@ -14,12 +14,14 @@ import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 
 public class OrdersOfDeliveryViewModel extends ViewModel {
     RepoOFOrdersDelivery repo = new RepoOFOrdersDelivery();
-    Context context ;
-MutableLiveData<ArrayList<Order>> mutableLiveData = new MutableLiveData<>();
+    Context context;
+    MutableLiveData<ArrayList<Order>> mutableLiveData = new MutableLiveData<>();
+
     public OrdersOfDeliveryViewModel(Context context) {
         this.context = context;
     }
-    public void getOrders(){
+
+    public void getOrders() {
         repo.getOrders().subscribeWith(new DisposableSingleObserver<ArrayList<Order>>() {
             @Override
             public void onSuccess(@NonNull ArrayList<Order> orders) {

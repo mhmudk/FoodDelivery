@@ -26,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 
-public class FragmentFavourite_Customer extends Fragment  {
+public class FragmentFavourite_Customer extends Fragment {
     TextView text_empty, findfood;
 
     DatabaseReference foodDatabase = FirebaseDatabase.getInstance().getReference("Food");

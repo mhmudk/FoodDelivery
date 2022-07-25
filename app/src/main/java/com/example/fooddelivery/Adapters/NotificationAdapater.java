@@ -14,8 +14,8 @@ import com.example.fooddelivery.pojo.Order;
 
 import java.util.List;
 
-public class NotificationAdapater extends RecyclerView.Adapter<NotificationAdapater.ViewHolder>  {
-   List<Order> list;
+public class NotificationAdapater extends RecyclerView.Adapter<NotificationAdapater.ViewHolder> {
+    List<Order> list;
     Context context;
 
     public NotificationAdapater(Context context, List<Order> list) {

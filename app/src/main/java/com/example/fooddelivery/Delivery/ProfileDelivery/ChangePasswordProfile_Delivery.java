@@ -69,7 +69,7 @@ public class ChangePasswordProfile_Delivery extends AppCompatActivity {
         if (TextUtils.isEmpty(getoldPassword) || getEmail == null || TextUtils.isEmpty(getEmail)) {
             return;
         }
-    user.updatePassword(getnewPassword).addOnCompleteListener(new OnCompleteListener<Void>() {
+        user.updatePassword(getnewPassword).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {

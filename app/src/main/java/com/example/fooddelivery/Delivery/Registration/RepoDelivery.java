@@ -48,16 +48,16 @@ public class RepoDelivery {
                 user.setId(uid);
                 databaseReference.child(uid)
                         .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            emitter.onSuccess(true);
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    emitter.onSuccess(true);
 
-                        } else {
-                            emitter.onError(task.getException());
-                        }
-                    }
-                });
+                                } else {
+                                    emitter.onError(task.getException());
+                                }
+                            }
+                        });
             }
         });
 

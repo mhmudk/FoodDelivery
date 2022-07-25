@@ -10,13 +10,16 @@ import com.example.fooddelivery.Manager.LoginManager;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 
-public class LoginViewModel extends ViewModel  {
+public class LoginViewModel extends ViewModel {
     Context context;
 
     LoginRepo log = new LoginRepo();
+
     public LoginViewModel(Context context) {
         this.context = context;
-    }  public void LogIn(String email, String password) {
+    }
+
+    public void LogIn(String email, String password) {
         log.Login(email, password).subscribeWith(new DisposableSingleObserver<Boolean>() {
             @Override
             public void onSuccess(@NonNull Boolean aBoolean) {

@@ -26,7 +26,8 @@ public class FoodAdapterSearch extends RecyclerView.Adapter<FoodAdapterSearch.Vi
     ArrayList<Food> listModel;
     Context mContext;
     CartData cartData;
-    CartDatafavourite cartDatafa ;
+    CartDatafavourite cartDatafa;
+
     public FoodAdapterSearch(ArrayList<Food> listModel, Context mContext) {
         this.listModel = listModel;
         this.mContext = mContext;
@@ -76,10 +77,12 @@ public class FoodAdapterSearch extends RecyclerView.Adapter<FoodAdapterSearch.Vi
         }
         holder.updateButton(food);
     }
-    public void filterlist(ArrayList<Food> newlist){
+
+    public void filterlist(ArrayList<Food> newlist) {
         this.listModel = newlist;
         notifyDataSetChanged();
     }
+
     @Override
     public int getItemCount() {
         return listModel.size();
@@ -87,7 +90,7 @@ public class FoodAdapterSearch extends RecyclerView.Adapter<FoodAdapterSearch.Vi
 
     public class ViewHoder extends RecyclerView.ViewHolder {
         View myview;
-        ImageView img,favourite;
+        ImageView img, favourite;
         TextView name, price;
         Button add;
 
@@ -103,7 +106,7 @@ public class FoodAdapterSearch extends RecyclerView.Adapter<FoodAdapterSearch.Vi
 
             itemView.setOnClickListener(view -> {
                 Intent intent = new Intent(mContext, ActivityDetials.class);
-               intent.putExtra("id", listModel.get(getAdapterPosition()).getId());
+                intent.putExtra("id", listModel.get(getAdapterPosition()).getId());
                 mContext.startActivity(intent);
             });
 
@@ -127,7 +130,7 @@ public class FoodAdapterSearch extends RecyclerView.Adapter<FoodAdapterSearch.Vi
         }
 
         public void updateButtonFavourite(Food food) {
-            if (cartDatafa.isInCart(food.getId(),mContext)) {
+            if (cartDatafa.isInCart(food.getId(), mContext)) {
                 favourite.setImageResource(R.drawable.ic_heart);
             } else {
 

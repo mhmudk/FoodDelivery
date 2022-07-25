@@ -39,7 +39,7 @@ public class CouriersAdapter extends RecyclerView.Adapter<CouriersAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         User user = arrayListCouriers.get(position);
         holder.updateUi(user);
-        holder.itemView.setOnClickListener(v-> {
+        holder.itemView.setOnClickListener(v -> {
             userClick.onUserClick(user);
         });
     }

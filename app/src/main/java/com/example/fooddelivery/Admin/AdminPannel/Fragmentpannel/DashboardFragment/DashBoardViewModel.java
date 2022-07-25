@@ -8,15 +8,16 @@ import androidx.lifecycle.ViewModel;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 
-public class DashBoardViewModel extends ViewModel  {
-    Context context ;
+public class DashBoardViewModel extends ViewModel {
+    Context context;
     RepoDashBoardPannel repo = new RepoDashBoardPannel();
-MutableLiveData<Integer> mutableLiveData  = new MutableLiveData<>();
+    MutableLiveData<Integer> mutableLiveData = new MutableLiveData<>();
+
     public DashBoardViewModel(Context context) {
         this.context = context;
     }
 
-    public void getData (){
+    public void getData() {
         repo.getNumberOfCustomers().subscribeWith(new DisposableSingleObserver<Integer>() {
             @Override
             public void onSuccess(@NonNull Integer integer) {
@@ -39,7 +40,7 @@ MutableLiveData<Integer> mutableLiveData  = new MutableLiveData<>();
 
             }
         });
-     repo.getNumberOfOrders().subscribeWith(new DisposableSingleObserver<Integer>() {
+        repo.getNumberOfOrders().subscribeWith(new DisposableSingleObserver<Integer>() {
             @Override
             public void onSuccess(@NonNull Integer integer) {
                 mutableLiveData.postValue(integer);
@@ -53,10 +54,4 @@ MutableLiveData<Integer> mutableLiveData  = new MutableLiveData<>();
 
     }
 
-    /*
-    public int getNumberOFusers(){
-        return repo.getNumberOfCustomers().subscribeWith(new Dispo)
-    }
-
-     */
 }

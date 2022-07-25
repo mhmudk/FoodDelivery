@@ -16,11 +16,12 @@ import com.example.fooddelivery.Login.LogInRegistration.LogIn;
 import com.example.fooddelivery.R;
 
 public class CreateAccount extends AppCompatActivity implements View.OnClickListener {
-    ImageView owner, ownerCheck, customer, customerCheck, delivery, deliveryCheck,back;
+    ImageView owner, ownerCheck, customer, customerCheck, delivery, deliveryCheck, back;
     Button next;
 
     Intent intent = null;
     int curuntSelected = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +32,9 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(curuntSelected==-1){
+                if (curuntSelected == -1) {
                     Toast.makeText(CreateAccount.this, "You have to choose ", Toast.LENGTH_SHORT).show();
-                return;
+                    return;
                 }
                 startActivity(intent);
             }
@@ -48,7 +49,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
 
     public void loginManager(View v) {
 
-        if(curuntSelected != -1){
+        if (curuntSelected != -1) {
             findViewById(curuntSelected).setVisibility(View.GONE);
         }
         switch (v.getId()) {
@@ -69,8 +70,8 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.imageView15:
                 deliveryCheck.setVisibility(View.VISIBLE);
-              curuntSelected = R.id.imageView15;
-              curuntSelected = R.id.imageView21;
+                curuntSelected = R.id.imageView15;
+                curuntSelected = R.id.imageView21;
                 intent = new Intent(CreateAccount.this, DeliveryRegistration.class);
                 break;
         }

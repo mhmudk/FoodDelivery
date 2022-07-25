@@ -14,19 +14,17 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class CartData {
-    private ArrayList<Food> listFood;
+
     SharedPreferences sharedPreferences;
     Context mContext;
-     String  ITEM_KEY = "cartquantity";
+    String ITEM_KEY = "cartquantity";
 
     public CartData(Context mContext) {
         this.mContext = mContext;
-     //   String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-  //      ITEM_KEY = ITEM_KEY + " " + id;
         sharedPreferences = mContext.getSharedPreferences(mContext.getPackageName(), MODE_PRIVATE);
     }
 
-    public ArrayList<CartItem> getCart(){
+    public ArrayList<CartItem> getCart() {
         ArrayList<CartItem> arrayList;
         Gson gson = new Gson();
         String json = sharedPreferences.getString(ITEM_KEY, null);
@@ -49,22 +47,23 @@ public class CartData {
 
     public void saveCartQuantity(Context mContext, ArrayList<CartItem> arrayListcartItem) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        String json =  new Gson().toJson(arrayListcartItem);
+        String json = new Gson().toJson(arrayListcartItem);
         editor.putString(ITEM_KEY, json);
         editor.apply();
     }
+
     public boolean isInCart(String id, Context context) {
         ArrayList<CartItem> listCart = getCart();
-        for(int i = 0; i < listCart.size(); i ++) {
-            if(listCart.get(i).getId().equals(id)) return true;
+        for (int i = 0; i < listCart.size(); i++) {
+            if (listCart.get(i).getId().equals(id)) return true;
         }
         return false;
     }
 
     public void updateQuantity(String id, int newQuantity) {
         ArrayList<CartItem> listCart = getCart();
-        for(int i = 0; i < listCart.size(); i ++) {
-            if(listCart.get(i).getId().equals(id)) {
+        for (int i = 0; i < listCart.size(); i++) {
+            if (listCart.get(i).getId().equals(id)) {
                 listCart.get(i).setQuantity(newQuantity);
                 saveCartQuantity(mContext, listCart);
                 break;
@@ -74,8 +73,8 @@ public class CartData {
 
     public CartItem getCartObject(String id) {
         ArrayList<CartItem> listCart = getCart();
-        for(int i = 0; i < listCart.size(); i ++) {
-            if(listCart.get(i).getId().equals(id)) {
+        for (int i = 0; i < listCart.size(); i++) {
+            if (listCart.get(i).getId().equals(id)) {
                 return listCart.get(i);
             }
         }
@@ -83,21 +82,16 @@ public class CartData {
         return null;
     }
 
-    public void remove(String id,Context context){
+    public void remove(String id, Context context) {
         ArrayList<CartItem> listCart = getCart();
-        for(int i = 0; i < listCart.size(); i ++) {
-            if(listCart.get(i).getId().equals(id)) {
+        for (int i = 0; i < listCart.size(); i++) {
+            if (listCart.get(i).getId().equals(id)) {
                 listCart.remove(i);
-                saveCartQuantity(context,listCart);
+                saveCartQuantity(context, listCart);
                 break;
             }
         }
     }
 
-    public void clearList() {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(ITEM_KEY, "");
-        editor.apply();
-    }
 
 }

@@ -16,15 +16,16 @@ import io.reactivex.rxjava3.core.SingleOnSubscribe;
 
 public class RepoFries {
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Food");
+
     public Single<Boolean> push(Food food, Uri filePath) {
-       return Single.create(new SingleOnSubscribe<Boolean>() {
-           @Override
-           public void subscribe(@NonNull SingleEmitter<Boolean> emitter) throws Throwable {
-               String uid = ref.push().getKey();
-               food.setId(uid);
-               photo(food, filePath);
-           }
-       });
+        return Single.create(new SingleOnSubscribe<Boolean>() {
+            @Override
+            public void subscribe(@NonNull SingleEmitter<Boolean> emitter) throws Throwable {
+                String uid = ref.push().getKey();
+                food.setId(uid);
+                photo(food, filePath);
+            }
+        });
 
     }
 
@@ -45,26 +46,26 @@ public class RepoFries {
                                             food.setPicUrl(uri1.toString());
                                             pushToDatabase(food);
                                         })).addOnFailureListener(exception -> {
-                    emitter.onError(exception);
-                });
+                            emitter.onError(exception);
+                        });
             }
         });
 
     }
 
-    public  Single<Boolean> pushToDatabase(Food food) {
-       return Single.create(new SingleOnSubscribe<Boolean>() {
-           @Override
-           public void subscribe(@NonNull SingleEmitter<Boolean> emitter) throws Throwable {
-               ref.child(food.getId()).setValue(food).addOnCompleteListener(task -> {
-                   if (task.isSuccessful()) {
-                 emitter.onSuccess(true);
-                   } else {
-                       emitter.onError(task.getException());
-                   }
-               });
-           }
-       }) ;
+    public Single<Boolean> pushToDatabase(Food food) {
+        return Single.create(new SingleOnSubscribe<Boolean>() {
+            @Override
+            public void subscribe(@NonNull SingleEmitter<Boolean> emitter) throws Throwable {
+                ref.child(food.getId()).setValue(food).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        emitter.onSuccess(true);
+                    } else {
+                        emitter.onError(task.getException());
+                    }
+                });
+            }
+        });
 
     }
 

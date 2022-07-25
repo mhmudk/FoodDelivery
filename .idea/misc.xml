@@ -7,6 +7,7 @@
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/drawable/btn_lognin.xml" value="0.1645" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_admin.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_admin_pannel.xml" value="0.25181159420289856" />
+        <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_choose_users.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_create_account.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_customer.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_delivery.xml" value="0.25181159420289856" />
@@ -18,6 +19,9 @@
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_main.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_orders_admin.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_search_food.xml" value="0.25181159420289856" />
+        <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_search_items.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_try.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/activity_users.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/burger_customer_list.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/delivery_list_pannel.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/deliveryorders_list.xml" value="0.25181159420289856" />
@@ -26,14 +30,17 @@
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/fragment_delivery.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/fragment_favourite.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/fragment_home.xml" value="0.25181159420289856" />
+        <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/fragment_orders.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/fragment_profile__admin.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/fragment_profile__customer.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/fragment_shopping__customer.xml" value="0.264" />
+        <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/fragment_users.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/keepon.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/login.xml" value="0.264" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/orders_admin.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/shopping_list.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/layout/testttttt.xml" value="0.25181159420289856" />
+        <entry key="..\:/Users/MAHMOUD/Downloads/FoodDelivery-master/FoodDelivery-master/app/src/main/res/mipmap-anydpi-v26/ic_launcher_app.xml" value="0.1645" />
       </map>
     </option>
   </component>

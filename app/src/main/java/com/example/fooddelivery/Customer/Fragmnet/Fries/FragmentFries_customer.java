@@ -47,7 +47,7 @@ public class FragmentFries_customer extends Fragment {
                 updateAdapter(new ArrayList(foods));
             }
         });
-friesViewModel.getFriesData();
+        friesViewModel.getFriesData();
         return v;
     }
 

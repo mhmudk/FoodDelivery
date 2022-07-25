@@ -16,7 +16,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class LoginManager {
-
     Context context;
     FirebaseAuth mAuth;
 
@@ -31,23 +30,23 @@ public class LoginManager {
     }
 
     private void getUserData() {
-        if(mAuth==null)
-            mAuth=FirebaseAuth.getInstance();
+        if (mAuth == null)
+            mAuth = FirebaseAuth.getInstance();
         String uId = mAuth.getCurrentUser().getUid();
         FirebaseDatabase.getInstance().getReference("Users").child(uId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User user = snapshot.getValue(User.class);
-                navigat(user.getUsertype());
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        User user = snapshot.getValue(User.class);
+                        navigat(user.getUsertype());
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                    }
+                });
     }
 
-    // ثوانى معلشي ياهندسه بقولك انه اصلا مش بيرضي يستدعي Saving function ال ف الريبو
     private void navigat(String userType) {
         if (userType.equals("Admin")) {
             context.startActivity(new Intent(context, AdminPannel.class));
@@ -57,5 +56,4 @@ public class LoginManager {
             context.startActivity(new Intent(context, DeliveryPannel.class));
         }
     }
-    // بص ياهندسه دلوقتي انا باجى اعمل Regis تمام بيقولي ان الريفرنس دا بنل مش عارف لي
 }

@@ -6,7 +6,9 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 
 public interface SignInWithGoogle {
     void AuthWithGoogle(GoogleSignInAccount account);
+
     void handleSignInWithGoogle(Task<GoogleSignInAccount> completedTask);
+
     void SetValueWithGoogle(UserProfileChangeRequest.Builder request);
 
 }

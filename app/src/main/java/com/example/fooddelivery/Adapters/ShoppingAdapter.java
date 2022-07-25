@@ -21,7 +21,7 @@ import com.example.fooddelivery.pojo.Food;
 
 import java.util.ArrayList;
 
-public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.ViewHolder>  {
+public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.ViewHolder> {
     ArrayList<Food> arrayList;
     Context mContext;
     CartData cartData;
@@ -42,10 +42,10 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.ViewHo
     }
 
 
-
     public interface onChangeMade {
         void changeMade();
-        void CheckSize(ArrayList<Food>array);
+
+        void CheckSize(ArrayList<Food> array);
     }
 
     @Override
@@ -53,9 +53,8 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.ViewHo
         Food food = arrayList.get(position);
 
 
-
         holder.cansel.setOnClickListener(view -> {
-   changeMade.CheckSize(arrayList);
+            changeMade.CheckSize(arrayList);
             arrayList.remove(position);
             notifyItemRemoved(position);
             cartData.remove(food.getId(), mContext);
@@ -95,15 +94,15 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.ViewHo
             count_item = itemView.findViewById(R.id.count_ofitem);
             price = itemView.findViewById(R.id.textView18);
             add_shopping = itemView.findViewById(R.id.button6);
-      //      minus_shopping = itemView.findViewById(R.id.button7);
+
         }
 
         public void updateUI(Food food) {
             name.setText(food.getName());
-            price.setText(food.getPrice() +"");
+            price.setText(food.getPrice() + "");
             Glide.with(mContext).load(food.getPicUrl()).diskCacheStrategy(DiskCacheStrategy.DATA).into(img);
             CartItem cartItem = cartData.getCartObject(food.getId());
-            if(cartItem != null) {
+            if (cartItem != null) {
                 count_item.setText(cartItem.getQuantity() + "");
             }
         }

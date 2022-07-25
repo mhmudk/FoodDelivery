@@ -16,7 +16,7 @@ import com.example.fooddelivery.pojo.Food;
 
 import java.util.ArrayList;
 
-public class MenuAdapater extends RecyclerView.Adapter<MenuAdapater.ViewHolder>  {
+public class MenuAdapater extends RecyclerView.Adapter<MenuAdapater.ViewHolder> {
     ArrayList<Food> list;
     Context context;
 
@@ -42,10 +42,12 @@ public class MenuAdapater extends RecyclerView.Adapter<MenuAdapater.ViewHolder> 
     public int getItemCount() {
         return list.size();
     }
-public void filterlist(ArrayList<Food> newlist){
+
+    public void filterlist(ArrayList<Food> newlist) {
         this.list = newlist;
         notifyDataSetChanged();
-}
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
         TextView name, price;
@@ -60,7 +62,7 @@ public void filterlist(ArrayList<Food> newlist){
         public void updateFood(Food food) {
             Glide.with(itemView).load(food.getPicUrl()).into(img);
             name.setText(food.getName());
-            price.setText(food.getPrice()+"");
+            price.setText(food.getPrice() + "");
         }
     }
 

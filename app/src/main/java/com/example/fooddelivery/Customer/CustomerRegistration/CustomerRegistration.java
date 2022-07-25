@@ -19,7 +19,7 @@ public class CustomerRegistration extends AppCompatActivity {
     EditText name, email, phone, password, location, confirmPassword;
     Button regist;
     CustomerViewModel viewModel;
-    ImageView back ;
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class CustomerRegistration extends AppCompatActivity {
         findbyid();
         LoginViewFatory fatory = new LoginViewFatory(this);
         viewModel = ViewModelProviders.of(this, fatory).get(CustomerViewModel.class);
-      
+
         regist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,30 +40,28 @@ public class CustomerRegistration extends AppCompatActivity {
                 String getLocation = location.getText().toString().trim();
                 String getConfirmPassword = confirmPassword.getText().toString().trim();
 
-                if(getName.isEmpty()&&getEmail.isEmpty()&&getPhone.isEmpty()&&getLocation.isEmpty()&&getPassword.isEmpty()) {
+                if (getName.isEmpty() && getEmail.isEmpty() && getPhone.isEmpty() && getLocation.isEmpty() && getPassword.isEmpty()) {
                     Toast.makeText(CustomerRegistration.this, "Fields are required", Toast.LENGTH_SHORT).show();
-               return ;
-                }else{
-                    if(getName.isEmpty()||getEmail.isEmpty()||getPhone.isEmpty()||getLocation.isEmpty()||getPassword.isEmpty()){
+                    return;
+                } else {
+                    if (getName.isEmpty() || getEmail.isEmpty() || getPhone.isEmpty() || getLocation.isEmpty() || getPassword.isEmpty()) {
 
                         Toast.makeText(CustomerRegistration.this, "Please Fill Fields", Toast.LENGTH_SHORT).show();
-                    }else{
-                        viewModel.SignUp( getEmail, getPassword,getName,getEmail,getPhone,getPassword,"Customer",getLocation);
+                    } else {
+                        viewModel.SignUp(getEmail, getPassword, getName, getEmail, getPhone, getPassword, "Customer", getLocation);
 
                     }
                 }
 
 
-
-
             }
         });
-   back.setOnClickListener(new View.OnClickListener() {
-       @Override
-       public void onClick(View v) {
-           startActivity(new Intent(getApplicationContext(), CreateAccount.class));
-       }
-   });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), CreateAccount.class));
+            }
+        });
     }
 
     public void findbyid() {

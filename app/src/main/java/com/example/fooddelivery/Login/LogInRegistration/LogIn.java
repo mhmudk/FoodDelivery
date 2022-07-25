@@ -67,13 +67,13 @@ public class LogIn extends AppCompatActivity implements SignInWithGoogle {
     CallbackManager mCallbackManager;
     private ActivityResultLauncher<Intent> launcher;
     Boolean pressed = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
         FacebookSdk.fullyInitialize();
-        //FacebookSdk.sdkInitialize(this);
         AppEventsLogger.activateApp(getApplication());
 
         findview();
@@ -133,10 +133,10 @@ public class LogIn extends AppCompatActivity implements SignInWithGoogle {
                 String getpassword = mpassword.getText().toString().trim();
                 if (TextUtils.isEmpty(getemail) && TextUtils.isEmpty(getpassword)) {
                     Toast.makeText(LogIn.this, "Fields are required", Toast.LENGTH_SHORT).show();
-                }else{
-                   if (TextUtils.isEmpty(getemail)||TextUtils.isEmpty(getpassword) || Integer.parseInt(getpassword) < 6) {
+                } else {
+                    if (TextUtils.isEmpty(getemail) || TextUtils.isEmpty(getpassword) || Integer.parseInt(getpassword) < 6) {
                         Toast.makeText(getApplicationContext(), "Please fill Fields ", Toast.LENGTH_SHORT).show();
-                    }else{
+                    } else {
                         viewmodel.LogIn(getemail, getpassword);
 
                     }
@@ -259,10 +259,9 @@ public class LogIn extends AppCompatActivity implements SignInWithGoogle {
 
     @Override
     public void onBackPressed() {
-        if(pressed){
+        if (pressed) {
             super.onBackPressed();
-        }
-        else{
+        } else {
             return;
         }
     }

@@ -14,10 +14,10 @@ import com.example.fooddelivery.Customer.Buttom_Navi.Profile.FragmentProfile_Cus
 import com.example.fooddelivery.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ViewCustomer extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener  {
+public class ViewCustomer extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView navigationView;
 
-Boolean pressed = false ;
+    Boolean pressed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +31,9 @@ Boolean pressed = false ;
 
     @Override
     public void onBackPressed() {
-        if(pressed){
+        if (pressed) {
             super.onBackPressed();
-        }
-        else{
+        } else {
             return;
         }
     }
@@ -55,7 +54,6 @@ Boolean pressed = false ;
             case R.id.profile_customer:
                 fragment = new FragmentProfile_Customer();
                 break;
-
 
 
         }

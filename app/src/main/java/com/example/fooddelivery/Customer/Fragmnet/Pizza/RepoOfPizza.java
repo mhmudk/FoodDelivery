@@ -19,7 +19,6 @@ import io.reactivex.rxjava3.core.SingleOnSubscribe;
 public class RepoOfPizza {
 
 
-
     public Single<List<Food>> getPizza() {
         DatabaseReference fooodDatabase = FirebaseDatabase.getInstance().getReference("Food");
         ArrayList<Food> listOfFood = new ArrayList<>();
@@ -41,7 +40,7 @@ public class RepoOfPizza {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                  emitter.onError(error.toException());
+                        emitter.onError(error.toException());
                     }
                 });
 

@@ -23,13 +23,13 @@ public class EditAdminRepo {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 User user = snapshot.getValue(User.class);
-emitter.onSuccess(user);
+                                emitter.onSuccess(user);
 
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
-emitter.onError(error.toException());
+                                emitter.onError(error.toException());
                             }
                         });
             }

@@ -15,11 +15,13 @@ import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 public class NotificationViewModel extends ViewModel {
     RepoNotification repoNotification = new RepoNotification();
     Context context;
-MutableLiveData<List<Order>> mutableLiveData  =new MutableLiveData<>();
+    MutableLiveData<List<Order>> mutableLiveData = new MutableLiveData<>();
+
     public NotificationViewModel(Context context) {
         this.context = context;
     }
-    public void getNotification(){
+
+    public void getNotification() {
         repoNotification.getNotificationOrdres().subscribeWith(new DisposableSingleObserver<List<Order>>() {
             @Override
             public void onSuccess(@NonNull List<Order> orders) {

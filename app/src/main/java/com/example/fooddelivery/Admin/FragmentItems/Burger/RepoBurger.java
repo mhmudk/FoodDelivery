@@ -37,8 +37,8 @@ public class RepoBurger {
                                     food.setPicUrl(uri1.toString());
                                     pushToDatabase(food);
                                 })).addOnFailureListener(exception -> {
-            binterface.Faild(exception.getMessage());
-        });
+                    binterface.Faild(exception.getMessage());
+                });
     }
 
     private void pushToDatabase(Food food) {

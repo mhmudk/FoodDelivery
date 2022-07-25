@@ -72,7 +72,7 @@ public class FragmentProfile_Admin extends Fragment implements View.OnClickListe
         viewModel.mutableLiveData.observe(requireActivity(), new Observer<User>() {
             @Override
             public void onChanged(User user) {
-updateUi(user);
+                updateUi(user);
             }
         });
         viewModel.getInformation();
@@ -122,9 +122,9 @@ updateUi(user);
         switch (v.getId()) {
             case R.id.mainprofile_location_ad:
 
-        Toast.makeText(getContext(), "Location is : "+ viewModel.mutableLiveData.getValue().getLocation(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Location is : " + viewModel.mutableLiveData.getValue().getLocation(), Toast.LENGTH_LONG).show();
 
-             break;
+                break;
             case R.id.mainprofile_support_ad:
                 Toast.makeText(getActivity(), " Call this number 01016292039", Toast.LENGTH_LONG).show();
                 break;

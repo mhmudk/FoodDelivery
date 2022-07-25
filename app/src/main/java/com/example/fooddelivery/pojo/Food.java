@@ -3,7 +3,7 @@ package com.example.fooddelivery.pojo;
 import java.io.Serializable;
 
 public class Food implements Serializable {
-    private String name,decsription = "",price,timeofdelivery="",id;
+    private String name, decsription = "", price, timeofdelivery = "", id;
     private String picUrl = "";
     private String category = "";
 
@@ -22,7 +22,7 @@ public class Food implements Serializable {
         this.decsription = decsription;
         this.price = price;
         this.timeofdelivery = timeofdelivery;
-        this.category=category;
+        this.category = category;
 
     }
 
@@ -54,7 +54,7 @@ public class Food implements Serializable {
     public Food(String name, String price, String category) {
         this.name = name;
         this.price = price;
-        this.category=category;
+        this.category = category;
     }
 
     public String getName() {
@@ -69,7 +69,4 @@ public class Food implements Serializable {
         return price;
     }
 
-    public String getTimeofdelivery() {
-        return timeofdelivery;
-    }
 }

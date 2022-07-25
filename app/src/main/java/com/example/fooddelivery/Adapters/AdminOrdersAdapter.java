@@ -51,25 +51,27 @@ public class AdminOrdersAdapter extends RecyclerView.Adapter<AdminOrdersAdapter.
             @Override
             public void onClick(View v) {
                 listener.onRejectClickListener(holder.getBindingAdapterPosition());
-  }
+            }
         });
 
     }
 
-    //
+
     @Override
     public int getItemCount() {
         return arrayListorders.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name, count, total;
+        TextView name, count, total, location, phonenumber;
         Button accept, reject;
 
 
         public ViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name_oforders);
+            location = itemView.findViewById(R.id.location_admin);
+            phonenumber = itemView.findViewById(R.id.phone_location_admin);
             count = itemView.findViewById(R.id.piecese_oforders);
             total = itemView.findViewById(R.id.total_oforders);
             accept = itemView.findViewById(R.id.accept_admin);
@@ -80,10 +82,11 @@ public class AdminOrdersAdapter extends RecyclerView.Adapter<AdminOrdersAdapter.
         public void updateUi(Order order) {
             count.setText(order.getProductsCount() + " ");
             total.setText(order.getTotalPrice() + "");
+
             getUserName(order.getUserUid());
         }
 
-        // get UserName
+
         private void getUserName(String userUid) {
             if (userUid.isEmpty()) return;
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users");
@@ -93,6 +96,8 @@ public class AdminOrdersAdapter extends RecyclerView.Adapter<AdminOrdersAdapter.
                     if (snapshot.exists()) {
                         User user = snapshot.getValue(User.class);
                         name.setText(user.getName());
+                        phonenumber.setText(user.getPhone() + "");
+                        location.setText(user.getLocation() + "");
                     }
                 }
 

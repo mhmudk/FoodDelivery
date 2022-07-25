@@ -1,9 +1,12 @@
 package com.example.fooddelivery.pojo;
 
 public class OrderProductItem {
-    String productId = "";// رقم البرودكت
-    int quantity = 0;//الكميله
+    String productId = "";
+    int quantity = 0;
 
+
+    public OrderProductItem() {
+    }
 
     public OrderProductItem(String productId, int quantity) {
         this.productId = productId;
@@ -11,23 +14,9 @@ public class OrderProductItem {
 
     }
 
-    public OrderProductItem() {
-    }
-
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
 
     public int getQuantity() {
         return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
 

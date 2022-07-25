@@ -18,10 +18,7 @@ import io.reactivex.rxjava3.core.SingleOnSubscribe;
 
 
 public class RepoOrdersPannel {
-
-
     DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference("Orders");
-
 
     public Single<ArrayList<Order>> getOrdersFromFirebase() {
         ArrayList<Order> orderArrayList = new ArrayList<>();
