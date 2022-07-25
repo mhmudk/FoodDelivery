@@ -6,11 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.fooddelivery.Login.LogInRegistration.LogIn;
 import com.example.fooddelivery.pojo.LoginViewFatory;
 import com.example.fooddelivery.Manager.CreateAccount;
 import com.example.fooddelivery.R;
@@ -20,6 +22,7 @@ public class CustomerRegistration extends AppCompatActivity {
     Button regist;
     CustomerViewModel viewModel;
     ImageView back;
+    TextView logCustomer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,11 +65,20 @@ public class CustomerRegistration extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), CreateAccount.class));
             }
         });
+        logCustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), LogIn.class));
+            }
+        });
+
+
     }
 
     public void findbyid() {
 
         name = findViewById(R.id.name_customer);
+        logCustomer = findViewById(R.id.log_customer);
         email = findViewById(R.id.email_customer);
         phone = findViewById(R.id.phoneee_customer);
         password = findViewById(R.id.passw_customer);
