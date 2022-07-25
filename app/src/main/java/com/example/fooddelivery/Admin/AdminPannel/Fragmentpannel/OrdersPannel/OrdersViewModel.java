@@ -15,13 +15,14 @@ import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 public class OrdersViewModel extends ViewModel {
     Context context;
     RepoOrdersPannel repo = new RepoOrdersPannel();
-MutableLiveData<ArrayList<Order>> mutableLiveData = new MutableLiveData<>();
+    MutableLiveData<ArrayList<Order>> mutableLiveData = new MutableLiveData<>();
+
     public OrdersViewModel(Context context) {
         this.context = context;
 
-   }
+    }
 
-  public void getOrders(){
+    public void getOrders() {
         repo.getOrdersFromFirebase().subscribeWith(new DisposableSingleObserver<ArrayList<Order>>() {
             @Override
             public void onSuccess(@NonNull ArrayList<Order> orders) {
@@ -33,5 +34,5 @@ MutableLiveData<ArrayList<Order>> mutableLiveData = new MutableLiveData<>();
 
             }
         });
-  }
+    }
 }

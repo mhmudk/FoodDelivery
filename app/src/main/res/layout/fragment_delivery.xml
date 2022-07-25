@@ -9,5 +9,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_delivery_pannel"
         android:layout_width="match_parent"
+        android:padding="@dimen/_10sdp"
         android:layout_height="match_parent" />
 </LinearLayout>

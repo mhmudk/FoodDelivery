@@ -65,6 +65,9 @@
             android:name=".Customer.Details.ActivityDetials"
             android:exported="false" />
         <activity
+            android:name=".Admin.AdminPannel.Fragmentpannel.UsersPannel.Edit.EditProfile_Admin"
+            android:exported="false" />
+        <activity
             android:name=".Login.ForgetPassword"
             android:exported="false" />
         <activity

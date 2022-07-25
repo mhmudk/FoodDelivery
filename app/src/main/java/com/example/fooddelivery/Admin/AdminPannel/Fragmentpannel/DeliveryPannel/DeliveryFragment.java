@@ -26,8 +26,9 @@ public class DeliveryFragment extends Fragment implements NumberofDeliveryAdapte
     DeliveryViewModel deliveryViewModel;
     RecyclerView rec;
     NumberofDeliveryAdapter adapterdelivery;
+
     public DeliveryFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -39,15 +40,16 @@ public class DeliveryFragment extends Fragment implements NumberofDeliveryAdapte
         rec.setLayoutManager(new LinearLayoutManager(getContext()));
         LoginViewFatory factory = new LoginViewFatory(getContext());
         deliveryViewModel = ViewModelProviders.of(this, factory).get(DeliveryViewModel.class);
-   deliveryViewModel.mutableLiveData.observe(requireActivity(), new Observer<ArrayList<User>>() {
-       @Override
-       public void onChanged(ArrayList<User> arrayList) {
-           updateDeliveryData(arrayList);
-       }
-   });
-   deliveryViewModel.getdeliveryData();
+        deliveryViewModel.mutableLiveData.observe(requireActivity(), new Observer<ArrayList<User>>() {
+            @Override
+            public void onChanged(ArrayList<User> arrayList) {
+                updateDeliveryData(arrayList);
+            }
+        });
+        deliveryViewModel.getdeliveryData();
         return v;
     }
+
     @Override
     public void sendId(User user) {
         String uId = user.getId();
@@ -58,8 +60,9 @@ public class DeliveryFragment extends Fragment implements NumberofDeliveryAdapte
         Toast.makeText(getActivity(), "Courier Assigned", Toast.LENGTH_SHORT).show();
         getActivity().finish();
     }
-    public void updateDeliveryData(ArrayList<User> list){
-        adapterdelivery  = new NumberofDeliveryAdapter(getContext(),list);
+
+    public void updateDeliveryData(ArrayList<User> list) {
+        adapterdelivery = new NumberofDeliveryAdapter(getContext(), list);
         rec.setAdapter(adapterdelivery);
     }
 }

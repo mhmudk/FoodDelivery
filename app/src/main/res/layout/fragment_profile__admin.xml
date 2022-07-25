@@ -1,35 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Customer.ViewCustomer">
 
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".02" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".99" />
-
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
 
-        app:layout_constraintBottom_toTopOf="@+id/guideline17"
-        app:layout_constraintEnd_toStartOf="@+id/guideline19"
-        app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:layout_constraintTop_toTopOf="@+id/guideline12">
+        >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView2"
@@ -43,10 +27,9 @@
         <LinearLayout
             android:id="@+id/main_profile"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-  android:gravity="center_horizontal"
-            >
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -233,42 +216,36 @@
 
             </LinearLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/signout_ad"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
-android:layout_marginTop="@dimen/_40sdp"
-               android:backgroundTint="#F7F0EC"
-                android:fontFamily="@font/metrophobic"
-                android:text="Sign Out"
-                android:textAllCaps="false"
-                android:textColor="#FF2300"
-                android:textSize="@dimen/_14ssp"
-                android:theme="@style/MyMaterialTheme_profile"
-                app:icon="@drawable/out_button"
-                app:iconGravity="textStart"
-
-                app:iconPadding="@dimen/_10sdp"
-                app:iconTint="#FF2300" />
-
-
         </LinearLayout>
 
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".02" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signout_ad"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:backgroundTint="#F7F0EC"
+            android:fontFamily="@font/metrophobic"
+            android:text="Sign Out"
+            android:textAllCaps="false"
+            android:textColor="#FF2300"
+            android:textSize="@dimen/_14ssp"
+            android:theme="@style/MyMaterialTheme_profile"
+            app:icon="@drawable/out_button"
+            app:iconGravity="textStart"
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".98" />
+            app:iconPadding="@dimen/_10sdp"
+            app:iconTint="#FF2300" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

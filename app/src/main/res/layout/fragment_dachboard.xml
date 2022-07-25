@@ -4,28 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_vertical"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context=".Admin.AdminPannel.AdminPannel">
 
     <Button
         android:id="@+id/search_admin_menu"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+
+        android:layout_marginBottom="@dimen/_25sdp"
         android:background="@drawable/btn_lognin"
-        android:text="Search Food"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:textColor="#B6B7B7"
+        android:drawableLeft="@drawable/search_icon"
         android:fontFamily="@font/poppins"
         android:gravity="start|center"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:textAllCaps="false"
+        android:padding="@dimen/_3sdp"
+        android:text="Search Food"
 
-        android:textSize="@dimen/_14ssp"
-        android:drawableLeft="@drawable/search_icon"
-        android:padding="@dimen/_3sdp" />
+        android:textAllCaps="false"
+        android:textColor="#B6B7B7"
+        android:textSize="@dimen/_14ssp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,9 +36,10 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_60sdp"
-            android:layout_margin="@dimen/_5sdp"
-
-            app:cardCornerRadius="@dimen/_15sdp">
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_5sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -47,8 +49,9 @@
 
                 <ImageView
 
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="@dimen/_30sdp"   android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:src="@drawable/users_admin" />
 
@@ -59,7 +62,8 @@
                     android:layout_weight="5"
                     android:fontFamily="@font/poppins"
                     android:text=" Users"
-                    android:textSize="@dimen/_25ssp" />
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_20ssp" />
 
                 <TextView
                     android:id="@+id/count_users"
@@ -69,7 +73,7 @@
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
                     android:text="45"
-                    android:textSize="@dimen/_35ssp" />
+                    android:textSize="@dimen/_30ssp" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -77,8 +81,11 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_60sdp"
-            android:layout_margin="@dimen/_5sdp"
-            app:cardCornerRadius="@dimen/_15sdp">
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_5sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -87,8 +94,8 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="@dimen/_30sdp"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:src="@drawable/orders_admin" />
@@ -99,8 +106,9 @@
                     android:layout_marginLeft="@dimen/_5sdp"
                     android:layout_weight="5"
                     android:fontFamily="@font/poppins"
+                    android:layout_gravity="center"
                     android:text="Orders"
-                    android:textSize="@dimen/_25ssp" />
+                    android:textSize="@dimen/_20ssp"/>
 
                 <TextView
                     android:id="@+id/count_orders"
@@ -110,7 +118,7 @@
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
                     android:text="9"
-                    android:textSize="@dimen/_35ssp" />
+                    android:textSize="@dimen/_30ssp" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -118,8 +126,11 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_60sdp"
-            android:layout_margin="@dimen/_5sdp"
-            app:cardCornerRadius="@dimen/_15sdp">
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_5sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -128,8 +139,8 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="@dimen/_30sdp"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:src="@drawable/motor" />
@@ -141,7 +152,8 @@
                     android:layout_weight="5"
                     android:fontFamily="@font/poppins"
                     android:text="Deliverys"
-                    android:textSize="@dimen/_25ssp" />
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_20ssp"/>
 
                 <TextView
                     android:id="@+id/count_delivery"
@@ -151,15 +163,19 @@
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
                     android:text="150"
-                    android:textSize="@dimen/_35ssp" />
+                    android:textSize="@dimen/_30ssp" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_60sdp"
-            android:layout_margin="@dimen/_5sdp"
-            app:cardCornerRadius="@dimen/_15sdp">
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_5sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -169,7 +185,7 @@
 
                 <ImageView
                     android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_35sdp"
+                    android:layout_height="@dimen/_20sdp"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:src="@drawable/menu_pannel" />
@@ -180,74 +196,76 @@
                     android:layout_marginLeft="@dimen/_5sdp"
                     android:layout_weight="5"
                     android:fontFamily="@font/poppins"
-                        android:text="Menu"
+                    android:text="Menu"
                     android:textColor="@color/colorprimary1"
-                    android:textSize="@dimen/_25ssp" />
-<androidx.cardview.widget.CardView
-    android:layout_width="@dimen/_30sdp"
-    android:layout_height="@dimen/_35sdp"
-    android:layout_margin="@dimen/_10sdp"
-    app:cardCornerRadius="@dimen/_5sdp"
-    android:layout_gravity="center"
-    android:layout_weight="1"
-    app:cardElevation="@dimen/_8sdp">
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_20ssp" />
 
-    <ImageView
-        android:id="@+id/goto_menu"
-        android:layout_gravity="center"
-        android:layout_width="@dimen/_30sdp"
-        android:layout_height="@dimen/_25sdp"
-        android:layout_marginStart="@dimen/_5sdp"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:layout_margin="@dimen/_5sdp"
 
-        android:src="@drawable/get_menu" />
-</androidx.cardview.widget.CardView>
-
+                    app:cardElevation="@dimen/_5sdp"
+                    app:cardCornerRadius="@dimen/_5sdp">
+                    <ImageView
+                        android:id="@+id/goto_menu"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:src="@drawable/back"
+                        android:scaleType="fitCenter"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:rotation="180"
+                        />
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+        <com.balysv.materialripple.MaterialRippleLayout
+            style="@style/RippleStyleGrey"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_47sdp"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_40sdp">
+
+            <Button
+                android:id="@+id/orders_admin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_creataccount"
+                android:gravity="center"
+                android:text="New Orders"
+                android:textAllCaps="false"
+                android:textColor="@color/colorprimary1"
+                android:textSize="@dimen/_16ssp" />
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            style="@style/RippleStyleGrey"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_47sdp"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_40sdp">
+
+            <Button
+                android:id="@+id/food_admin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_next"
+                android:gravity="center"
+                android:text="Add Meal"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp" />
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+
     </LinearLayout>
 
-    <com.balysv.materialripple.MaterialRippleLayout
-        style="@style/RippleStyleGrey"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_47sdp"
-        android:layout_marginStart="@dimen/_40sdp"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_40sdp">
-
-        <Button
-            android:id="@+id/orders_admin"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_creataccount"
-            android:gravity="center"
-            android:text="New Orders"
-            android:textAllCaps="false"
-            android:textColor="@color/colorprimary1"
-            android:textSize="@dimen/_16ssp" />
-
-    </com.balysv.materialripple.MaterialRippleLayout>
-
-    <com.balysv.materialripple.MaterialRippleLayout
-        style="@style/RippleStyleGrey"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_47sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginStart="@dimen/_40sdp"
-        android:layout_marginEnd="@dimen/_40sdp">
-        <Button
-            android:id="@+id/food_admin"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/button_next"
-            android:gravity="center"
-            android:text="Add Meal"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_16ssp"
-            />
-
-    </com.balysv.materialripple.MaterialRippleLayout>
 
 
 </LinearLayout>

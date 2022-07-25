@@ -1,36 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Customer.ViewCustomer">
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline12"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".02" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".99" />
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_5sdp"
+
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/backAdminpannelProfile"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:rotation="180"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_60sdp"
+            android:text="Profile"
+            android:textColor="@color/colorprimary1"
+            android:textSize="@dimen/_24ssp" />
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal|center"
         android:orientation="vertical"
 
-        app:layout_constraintBottom_toTopOf="@+id/guideline17"
-        app:layout_constraintEnd_toStartOf="@+id/guideline19"
-        app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:layout_constraintTop_toTopOf="@+id/guideline12">
+        >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView2"
@@ -46,37 +66,35 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="visible"
-            >
+            android:visibility="visible">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="center_horizontal"
 
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_marginLeft="@dimen/_5sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:fontFamily="@font/poppins_medium"
 
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/colorprimary1"
                     android:text="Hi,"
-                    />
+                    android:textColor="@color/colorprimary1"
+                    android:textSize="@dimen/_16ssp" />
+
                 <TextView
-                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:id="@+id/name_formdata_ad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_16ssp"
-                    android:id="@+id/name_formdata_ad"
+                    android:layout_marginLeft="@dimen/_5sdp"
                     android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/colorprimary1"
                     android:text=" Mahmoud Khattab"
-                    />
+                    android:textColor="@color/colorprimary1"
+                    android:textSize="@dimen/_16ssp" />
             </LinearLayout>
 
 
@@ -84,75 +102,79 @@
                 android:id="@+id/edit_profile_three"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:orientation="vertical"
-                android:visibility="visible"
-                android:layout_gravity="center_horizontal">
+                android:visibility="visible">
 
                 <EditText
                     android:id="@+id/edit_name_profile_ad"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginStart="@dimen/_36sdp"
-                    android:layout_marginEnd="@dimen/_36sdp"
-                    android:paddingStart="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_36sdp"
                     android:background="@drawable/btn_lognin"
                     android:drawableLeft="@drawable/user"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:textSize="@dimen/_14ssp"
                     android:fontFamily="@font/metrophobic"
+                    android:padding="@dimen/_3sdp"
+                    android:paddingStart="@dimen/_15sdp"
                     android:text="Name"
                     android:textColor="#B6B7B7"
-                    android:padding="@dimen/_3sdp" />
+                    android:textSize="@dimen/_14ssp" />
+
                 <EditText
                     android:id="@+id/edit_email_profile_ad"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginStart="@dimen/_36sdp"
-                    android:layout_marginEnd="@dimen/_36sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:paddingStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_36sdp"
                     android:background="@drawable/btn_lognin"
                     android:drawableLeft="@drawable/e_mail"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:textSize="@dimen/_14ssp"
                     android:fontFamily="@font/metrophobic"
+                    android:padding="@dimen/_3sdp"
+                    android:paddingStart="@dimen/_15sdp"
                     android:text="Email"
                     android:textColor="#B6B7B7"
-                    android:padding="@dimen/_3sdp" />
+                    android:textSize="@dimen/_14ssp" />
+
                 <EditText
                     android:id="@+id/edit_mobilenumber_ad"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginStart="@dimen/_36sdp"
-                    android:layout_marginEnd="@dimen/_36sdp"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_36sdp"
                     android:background="@drawable/btn_lognin"
                     android:drawableLeft="@drawable/phonemd"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:paddingStart="@dimen/_15sdp"
-                    android:textSize="@dimen/_14ssp"
                     android:fontFamily="@font/metrophobic"
+                    android:padding="@dimen/_3sdp"
+                    android:paddingStart="@dimen/_15sdp"
                     android:text="Mobile Number"
                     android:textColor="#B6B7B7"
-                    android:padding="@dimen/_3sdp" />
+                    android:textSize="@dimen/_14ssp" />
+
                 <EditText
                     android:id="@+id/edit_location_profile_ad"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginStart="@dimen/_36sdp"
-                    android:layout_marginEnd="@dimen/_36sdp"
-
                     android:layout_marginTop="@dimen/_10sdp"
+
+                    android:layout_marginEnd="@dimen/_36sdp"
                     android:background="@drawable/btn_lognin"
                     android:drawableLeft="@drawable/locat"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:textSize="@dimen/_14ssp"
                     android:fontFamily="@font/metrophobic"
+                    android:padding="@dimen/_3sdp"
+                    android:paddingStart="@dimen/_15sdp"
                     android:text="Location"
                     android:textColor="#B6B7B7"
-                    android:paddingStart="@dimen/_15sdp"
-                    android:padding="@dimen/_3sdp" />
+                    android:textSize="@dimen/_14ssp" />
+
                 <Button
                     android:id="@+id/reEdit_ad"
                     android:layout_width="@dimen/_250sdp"
@@ -169,18 +191,5 @@
         </LinearLayout>
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".02" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".98" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

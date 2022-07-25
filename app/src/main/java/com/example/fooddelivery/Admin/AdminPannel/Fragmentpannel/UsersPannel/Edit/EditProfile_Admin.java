@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.fooddelivery.Admin.AdminPannel.AdminPannel;
 import com.example.fooddelivery.Customer.ViewCustomer;
 import com.example.fooddelivery.R;
 import com.example.fooddelivery.pojo.LoginViewFatory;
@@ -26,7 +28,9 @@ public class EditProfile_Admin extends AppCompatActivity {
     TextView txt_name;
     EditText name_edit, email_edit, mobilenumber_edit, location_edit;
     Button save;
-EditAdminViewModel viewModel ;
+    EditAdminViewModel viewModel;
+    ImageView backtoAdminpannel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,22 +38,27 @@ EditAdminViewModel viewModel ;
         findView();
         LoginViewFatory factory = new LoginViewFatory(getApplicationContext());
         viewModel = ViewModelProviders.of(this, factory).get(EditAdminViewModel.class);
-viewModel.mutableLiveData.observe(this, new Observer<User>() {
-    @Override
-    public void onChanged(User user) {
-        updateUi(user);
-    }
-});
-viewModel.getInfoEdit();
+        viewModel.mutableLiveData.observe(this, new Observer<User>() {
+            @Override
+            public void onChanged(User user) {
+                updateUi(user);
+            }
+        });
+        viewModel.getInfoEdit();
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Edit();
                 Toast.makeText(EditProfile_Admin.this, "Information Updated`", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), ViewCustomer.class));
+                startActivity(new Intent(getApplicationContext(), AdminPannel.class));
             }
         });
-
+        backtoAdminpannel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), AdminPannel.class));
+            }
+        });
         GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if (signInAccount != null) {
             name_edit.setText(signInAccount.getDisplayName());
@@ -63,6 +72,7 @@ viewModel.getInfoEdit();
 
     public void findView() {
         name_edit = findViewById(R.id.edit_name_profile_ad);
+        backtoAdminpannel = findViewById(R.id.backAdminpannelProfile);
         email_edit = findViewById(R.id.edit_email_profile_ad);
         mobilenumber_edit = findViewById(R.id.edit_mobilenumber_ad);
         location_edit = findViewById(R.id.edit_location_profile_ad);
@@ -85,7 +95,8 @@ viewModel.getInfoEdit();
 
 
     }
-    public void updateUi(User user){
+
+    public void updateUi(User user) {
         name_edit.setText(user.getName());
         txt_name.setText(user.getName());
         email_edit.setText(user.getEmail());
@@ -93,4 +104,5 @@ viewModel.getInfoEdit();
         location_edit.setText(user.getLocation());
 
     }
+
 }

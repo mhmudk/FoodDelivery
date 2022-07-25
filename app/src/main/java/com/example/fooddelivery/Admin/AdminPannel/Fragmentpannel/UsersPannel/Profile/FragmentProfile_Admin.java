@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.fooddelivery.Admin.AdminPannel.Fragmentpannel.UsersPannel.Edit.EditProfile_Admin;
 import com.example.fooddelivery.Customer.Buttom_Navi.Profile.ChangePasswordProfile;
 import com.example.fooddelivery.Customer.Buttom_Navi.Profile.EditProfile;
 import com.example.fooddelivery.Customer.Buttom_Navi.Profile.LoginProflle;
@@ -59,7 +60,7 @@ public class FragmentProfile_Admin extends Fragment implements View.OnClickListe
             editprofile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getContext(), EditProfile.class));
+                    startActivity(new Intent(getContext(), EditProfile_Admin.class));
                 }
             });
             Signout();

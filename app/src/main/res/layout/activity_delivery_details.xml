@@ -14,29 +14,33 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
             android:layout_margin="@dimen/_5sdp"
 
-            app:cardCornerRadius="@dimen/_5sdp"
-            app:cardElevation="@dimen/_5sdp">
-
+            app:cardElevation="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_5sdp">
+            back_toprofile
             <ImageView
                 android:id="@+id/back_toprofile"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_40sdp"
-                android:padding="@dimen/_5sdp"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/back"
                 android:scaleType="fitCenter"
-                android:src="@drawable/back" />
+                android:layout_gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:rotation="180"
+                />
         </androidx.cardview.widget.CardView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_60sdp"
+
             android:fontFamily="@font/poppins_medium"
             android:text="Add Address"
+            android:layout_gravity="center"
             android:textColor="@color/colorprimary1"
             android:textSize="@dimen/_20ssp" />
 
@@ -45,10 +49,10 @@
     <EditText
         android:id="@+id/city_location"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_55sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:background="@drawable/btn_lognin"
 
         android:fontFamily="@font/poppins"
@@ -62,10 +66,10 @@
     <EditText
         android:id="@+id/area_location"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_55sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:background="@drawable/btn_lognin"
 
         android:fontFamily="@font/poppins"
@@ -79,10 +83,10 @@
     <EditText
         android:id="@+id/streetname_location"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_55sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:background="@drawable/btn_lognin"
         android:fontFamily="@font/poppins"
         android:hint="Street Name"
@@ -95,24 +99,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/buildingnumber_location"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_55sdp"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
-            android:layout_weight="1"
-            android:fontFamily="@font/poppins"
-            android:hint="Building Number"
-            android:padding="@dimen/_10sdp"
-            android:textColorHint="#B5B5B5"
-            android:textSize="@dimen/_14ssp"
-            app:met_floatingLabel="highlight"
-            app:met_singleLineEllipsis="true" />
+<EditText
 
+    android:id="@+id/buildingnumber_location"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_55sdp"
+    android:layout_marginStart="@dimen/_5sdp"
+    android:layout_marginEnd="@dimen/_5sdp"
+    android:layout_weight="1"
+    android:fontFamily="@font/poppins"
+    android:hint="Building Number"
+    android:padding="@dimen/_10sdp"
+    android:textColorHint="#B5B5B5"
+    android:textSize="@dimen/_14ssp"
+    android:background="@drawable/btn_lognin"
+
+    app:met_floatingLabel="highlight"
+    app:met_singleLineEllipsis="true"/>
         <EditText
             android:id="@+id/floornumber_location"
             android:layout_width="match_parent"

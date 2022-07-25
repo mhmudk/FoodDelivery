@@ -22,10 +22,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class OrdersAdmin extends AppCompatActivity implements IOnAdapterClickListener {
- OrdersViewModel ordersViewModel;
+    OrdersViewModel ordersViewModel;
     RecyclerView recyclerView;
     AdminOrdersAdapter adapter;
-   // ArrayList<Order> orderArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +32,18 @@ public class OrdersAdmin extends AppCompatActivity implements IOnAdapterClickLis
         setContentView(R.layout.activity_orders_admin);
         recyclerView = findViewById(R.id.orders_rec);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    LoginViewFatory factory = new LoginViewFatory(getApplicationContext());
-    ordersViewModel = ViewModelProviders.of(this, factory).get(OrdersViewModel .class);
-  ordersViewModel.mutableLiveData.observe(this, new Observer<ArrayList<Order>>() {
-      @Override
-      public void onChanged(ArrayList<Order> orders) {
-          updateAdapter(orders);
+        LoginViewFatory factory = new LoginViewFatory(getApplicationContext());
+        ordersViewModel = ViewModelProviders.of(this, factory).get(OrdersViewModel.class);
+        ordersViewModel.mutableLiveData.observe(this, new Observer<ArrayList<Order>>() {
+            @Override
+            public void onChanged(ArrayList<Order> orders) {
+                updateAdapter(orders);
 
-      }
-  });
-ordersViewModel.getOrders();
+            }
+        });
+        ordersViewModel.getOrders();
     }
+
     private void updateAdapter(ArrayList<Order> orderArrayList) {
         adapter = new AdminOrdersAdapter(orderArrayList, this);
         recyclerView.setAdapter(adapter);

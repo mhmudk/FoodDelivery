@@ -1,5 +1,6 @@
 package com.example.fooddelivery.Customer.DeliveryCheckout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fooddelivery.CartData;
+import com.example.fooddelivery.Customer.ViewCustomer;
 import com.example.fooddelivery.R;
 import com.example.fooddelivery.pojo.CartItem;
 import com.example.fooddelivery.pojo.Order;
@@ -62,7 +64,7 @@ public class DeliveryCheckout extends AppCompatActivity {
                     .setValue(order).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     Toast.makeText(DeliveryCheckout.this, "Order Sent Successfully", Toast.LENGTH_SHORT).show();
-                    finish();
+                    startActivity(new Intent(getApplicationContext(), ViewCustomer.class));
                 } else {
                     Toast.makeText(DeliveryCheckout.this, "Order Sent Failed", Toast.LENGTH_SHORT).show();
                 }
